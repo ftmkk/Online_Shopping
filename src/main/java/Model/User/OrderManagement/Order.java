@@ -1,21 +1,35 @@
 package Model.User.OrderManagement;
 
+import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
 
+@Entity
 public class Order {
 
-    private String code;
+    @Id
+    @Column
+    @GeneratedValue(generator = "increment")
+    private String id;
+    @Column
     private Date time;
+    @Column
     private Long totalPrice;
+    @Column
+    @OneToMany
     private List<SelectedProduct> productList;
+    @Column
+    @Enumerated
     private OrderStatus status;
+    @Column
     private Long transmissionCost;
+    @Column
+    @OneToOne
     private Address destination;
 
 
-    public Order(String code, Date time, Long totalPrice, List<SelectedProduct> productList, OrderStatus status, Long transmissionCost, Address destination) {
-        this.code = code;
+    public Order(String id, Date time, Long totalPrice, List<SelectedProduct> productList, OrderStatus status, Long transmissionCost, Address destination) {
+        this.id = id;
         this.time = time;
         this.totalPrice = totalPrice;
         this.productList = productList;
@@ -25,8 +39,8 @@ public class Order {
     }
 
 
-    public String getCode() {
-        return code;
+    public String getId() {
+        return id;
     }
 
     public Date getTime() {
@@ -53,8 +67,8 @@ public class Order {
         return destination;
     }
 
-    public void setCode(String code) {
-        this.code = code;
+    public void setId(String id) {
+        this.id = id;
     }
 
     public void setTime(Date time) {

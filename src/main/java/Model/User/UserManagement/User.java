@@ -5,10 +5,7 @@ import Model.User.OrderManagement.Address;
 import Model.User.OrderManagement.Order;
 import Model.User.OrderManagement.SelectedProduct;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
 
@@ -28,18 +25,23 @@ public class User {
     @Column
     private String email;
     @Column
+    @Enumerated
     private Gender gender;
     @Column
     private String residenceAddress;
     @Column
     private Date birthDate;
     @Column
+    @OneToMany
     private List<Order> orderList;
     @Column
+    @OneToMany
     private List<Product> wishList;
     @Column
+    @OneToMany
     private List<SelectedProduct> currentBasket;
     @Column
+    @OneToMany
     private List<Address> addresses;
 
     public User(Integer id, String name, String phoneNumber, String mobileNumber, String email, Gender gender, String residenceAddress, Date birthDate, List<Order> orderList, List<Product> wishList, List<SelectedProduct> currentBasket, List<Address> addresses) {
