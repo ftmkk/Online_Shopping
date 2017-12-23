@@ -1,7 +1,7 @@
 package Model.User.UserManagement;
 
 import Model.Product.ProductManagement.Product;
-import Model.User.AddressManagement.Address;
+import Model.User.OrderManagement.Address;
 import Model.User.OrderManagement.Order;
 import Model.User.OrderManagement.SelectedProduct;
 
