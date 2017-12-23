@@ -5,24 +5,45 @@ import Model.User.OrderManagement.Address;
 import Model.User.OrderManagement.Order;
 import Model.User.OrderManagement.SelectedProduct;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import java.util.Date;
 import java.util.List;
 
+@Entity
 public class User {
 
+    @Id
+    @Column
+    @GeneratedValue(generator = "increament")
+    private Integer id;
+    @Column
     private String name;
+    @Column
     private String phoneNumber;
+    @Column
     private String mobileNumber;
+    @Column
     private String email;
+    @Column
     private Gender gender;
+    @Column
     private String residenceAddress;
+    @Column
     private Date birthDate;
+    @Column
     private List<Order> orderList;
+    @Column
     private List<Product> wishList;
+    @Column
     private List<SelectedProduct> currentBasket;
+    @Column
     private List<Address> addresses;
 
-    public User(String name, String phoneNumber, String mobileNumber, String email, Gender gender, String residenceAddress, Date birthDate, List<Order> orderList, List<Product> wishList, List<SelectedProduct> currentBasket, List<Address> addresses) {
+    public User(Integer id, String name, String phoneNumber, String mobileNumber, String email, Gender gender, String residenceAddress, Date birthDate, List<Order> orderList, List<Product> wishList, List<SelectedProduct> currentBasket, List<Address> addresses) {
+        this.id = id;
         this.name = name;
         this.phoneNumber = phoneNumber;
         this.mobileNumber = mobileNumber;
@@ -36,6 +57,14 @@ public class User {
         this.addresses = addresses;
     }
 
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
     public String getName() {
         return name;
