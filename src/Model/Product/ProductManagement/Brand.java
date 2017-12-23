@@ -14,7 +14,7 @@ public class Brand {
         this.persianName = persianName;
     }
 
-    public boolean compare(Brand brand){
-        return this.id == brand.id;
+    public boolean equals(Brand brand){
+        return this.id.equals(brand.id);
     }
 }

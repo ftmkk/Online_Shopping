@@ -3,6 +3,7 @@ package Controller.Product.FilterManagement;
 import Model.Product.ProductManagement.Product;
 import Model.Product.ProductManagement.ProductStatus;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class FilterByStatus extends OptionalFilter{
@@ -17,7 +18,17 @@ public class FilterByStatus extends OptionalFilter{
 
     @Override
     public List<Product> filter() {
-        //TODO
-        return null;
+        List<Product> result = new ArrayList<>();
+        List<Product> products = filterProducts.filter();
+        for(Product product : products){
+            boolean add = false;
+            if(product.getStatus().equals(status)){
+                add = true;
+            }
+            if(add){
+                result.add(product);
+            }
+        }
+        return result;
     }
 }

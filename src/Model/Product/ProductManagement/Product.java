@@ -21,11 +21,30 @@ public class Product {
     private List<String> images;
     private String review;
     private Brand brand;
-    private List<AttributeRepository> attrs;
+    private AttributeRepository attributes;
     private List<Color> colors;
     private Guaranty guaranty;
     private Long discount;
 
+    public Product(String name, String persianName, Long price, Map<Date, Long> priceHistory, ProductStatus status, Integer remainingCount, String briefDescription, Integer visitCount, Integer sellCount, Date releaseDate, List<String> images, String review, Brand brand, AttributeRepository attributes, List<Color> colors, Guaranty guaranty, Long discount) {
+        this.name = name;
+        this.persianName = persianName;
+        this.price = price;
+        this.priceHistory = priceHistory;
+        this.status = status;
+        this.remainingCount = remainingCount;
+        this.briefDescription = briefDescription;
+        this.visitCount = visitCount;
+        this.sellCount = sellCount;
+        this.releaseDate = releaseDate;
+        this.images = images;
+        this.review = review;
+        this.brand = brand;
+        this.attributes = attributes;
+        this.colors = colors;
+        this.guaranty = guaranty;
+        this.discount = discount;
+    }
 
     public String getName() {
         return name;
@@ -79,8 +98,8 @@ public class Product {
         return brand;
     }
 
-    public List<AttributeRepository> getAttrs() {
-        return attrs;
+    public AttributeRepository getAttributes() {
+        return attributes;
     }
 
     public List<Color> getColors() {

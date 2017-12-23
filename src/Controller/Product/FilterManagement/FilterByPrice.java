@@ -2,6 +2,7 @@ package Controller.Product.FilterManagement;
 
 import Model.Product.ProductManagement.Product;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class FilterByPrice extends OptionalFilter{
@@ -18,7 +19,17 @@ public class FilterByPrice extends OptionalFilter{
 
     @Override
     public List<Product> filter() {
-        //TODO
-        return null;
+        List<Product> result = new ArrayList<>();
+        List<Product> products = filterProducts.filter();
+        for(Product product : products){
+            boolean add = false;
+            if(product.getPrice() <= maxPrice && product.getPrice() >= minPrice){
+                add = true;
+            }
+            if(add){
+                result.add(product);
+            }
+        }
+        return result;
     }
 }

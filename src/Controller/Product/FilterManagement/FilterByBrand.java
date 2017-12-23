@@ -18,11 +18,17 @@ public class FilterByBrand extends OptionalFilter{
 
     @Override
     public List<Product> filter() {
-        List<Product> result = new ArrayList<Product>();
+        List<Product> result = new ArrayList<>();
         List<Product> products = filterProducts.filter();
 
         for(Product product : products){
-            if(brands.contains(product.getBrand())){
+            boolean add = false;
+            for(Brand brand : brands){
+                if(brand.equals(product.getBrand())){
+                    add = true;
+                }
+            }
+            if(add){
                 result.add(product);
             }
         }

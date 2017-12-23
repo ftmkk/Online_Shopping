@@ -16,15 +16,8 @@ public class FilterByCategory extends FilterProducts{
 
     @Override
     public List<Product> filter() {
-//        List<Product> result = new ArrayList<Product>();
-//        List<Product> products = filterProducts.filter();
-//
-//        for(Product product : products){
-//            if(category product.getBrand())){
-//                result.add(product);
-//            }
-//        }
-//        return result;
-        return null;
+        List<Product> result = new ArrayList<>();
+        //TODO: CONNECT TO DB
+        return result;
     }
 }
