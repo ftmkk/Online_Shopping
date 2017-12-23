@@ -1,17 +1,24 @@
 package Model.Product.AttributeManagement;
 
-public abstract class Attribute {
+public class Attribute<Object> {
 
     private String title;
-    private Integer order;
+    private Object value;
 
-    public abstract Object getValue();
+    public Attribute(String title, Object value) {
+        this.title = title;
+        this.value = value;
+    }
 
     public String getTitle() {
         return title;
     }
 
-    public Integer getOrder() {
-        return order;
+    public Object getValue() {
+        return value;
+    }
+
+    public boolean equals(Attribute attribute){
+        return this.title.equals(attribute.getTitle());
     }
 }

@@ -2,6 +2,7 @@ package Model.Product.ProductManagement;
 
 import Model.Product.AttributeManagement.AttributeRepository;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.Map;
 import java.util.List;
@@ -112,6 +113,16 @@ public class Product {
 
     public Long getDiscount() {
         return discount;
+    }
+
+    public void setContents(){
+        //QUERY PRODUCT BY NAME
+    }
+
+    public List<Product> getProducts(){
+        List<Product> products = new ArrayList<>();
+        products.add(this);
+        return products;
     }
 
 }

@@ -6,16 +6,39 @@ public class Color {
 
     private Integer id;
     private String name;
-    private RGBColor rgb;
+    private Integer r;
+    private Integer g;
+    private Integer b;
 
-    public Color(Integer id, String name, RGBColor rgb) {
+    public Color(Integer id, String name, Integer r, Integer g, Integer b) {
         this.id = id;
         this.name = name;
-        this.rgb = rgb;
+        this.r = r;
+        this.g = g;
+        this.b = b;
     }
-
 
     public boolean equals(Color color){
         return color.id.equals(this.id);
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public Integer getR() {
+        return r;
+    }
+
+    public Integer getG() {
+        return g;
+    }
+
+    public Integer getB() {
+        return b;
     }
 }
