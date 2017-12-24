@@ -1,7 +1,7 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='utf-8'?>
 <!DOCTYPE hibernate-configuration PUBLIC
-        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
-        "http://hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+        "-//Hibernate/Hibernate Configuration DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
     <session-factory>
         <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
@@ -20,18 +20,20 @@
         <!-- Drop and re-create the database schema on startup -->
         <property name="hbm2ddl.auto">create</property>
         <!-- Names the annotated entity class -->
-        <mapping class="Model.ProductModel.AttributeManagement.Attribute" />
-        <mapping class="Model.ProductModel.AttributeManagement.AttributeGroup" />
-        <mapping class="Model.ProductModel.AttributeManagement.AttributeRepository" />
-        <mapping class="Model.ProductModel.ProductManagement.Brand" />
-        <mapping class="Model.ProductModel.ProductManagement.Category" />
-        <mapping class="Model.ProductModel.ProductManagement.Color" />
-        <mapping class="Model.ProductModel.ProductManagement.Guaranty" />
-        <mapping class="Model.ProductModel.ProductManagement.Product" />
-        <mapping class="Model.UserModel.OrderManagement.Address" />
-        <mapping class="Model.UserModel.OrderManagement.Order" />
-        <mapping class="Model.UserModel.OrderManagement.SelectedProduct" />
-        <mapping class="Model.UserModel.UserManagement.User" />
+        <mapping class="Model.ProductModel.Attribute" />
+        <mapping class="Model.ProductModel.AttributeType" />
+        <mapping class="Model.ProductModel.AttributeGroup" />
+        <mapping class="Model.ProductModel.Brand" />
+        <mapping class="Model.ProductModel.Category" />
+        <mapping class="Model.ProductModel.Color" />
+        <mapping class="Model.ProductModel.Content" />
+        <mapping class="Model.ProductModel.Guaranty" />
+        <mapping class="Model.ProductModel.Product" />
+        <mapping class="Model.UserModel.Address" />
+        <mapping class="Model.UserModel.Order" />
+        <mapping class="Model.UserModel.OrderedProduct" />
+        <mapping class="Model.UserModel.User" />
+        <mapping class="Model.UserModel.ProductInBasket" />
 
     </session-factory>
 </hibernate-configuration>

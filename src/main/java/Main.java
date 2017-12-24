@@ -1,8 +1,5 @@
 import Model.Hibernate;
-import Model.ProductModel.AttributeManagement.Attribute;
-import Model.ProductModel.AttributeManagement.AttributeGroup;
-import Model.ProductModel.AttributeManagement.AttributeRepository;
-import Model.ProductModel.ProductManagement.*;
+import Model.ProductModel.*;
 import org.hibernate.Session;
 
 import java.util.ArrayList;
@@ -15,13 +12,13 @@ public class Main {
 
     public static void main(String[] args) {
 
-        AttributeRepository attrR = new AttributeRepository();
-        AttributeGroup attrG = new AttributeGroup("CATEGORY_1");
-        attrG.addAttribute(new Attribute(1, "ATTRIBUTE_A", "2"));
-        attrG.addAttribute(new Attribute(2,"ATTRIBUTE_B","true"));
-        attrR.addAttributeGroup(attrG);
+        List<Attribute> attrL = new ArrayList<>();
+        AttributeGroup attrG = new AttributeGroup("CATEGORY_1",null);
+        attrL.add(new Attribute("wight","2.3 kg",attrG,null));
+        attrL.add(new Attribute("screen size","1.2 inch",attrG,null));
+
         List<Color> colors = new ArrayList<>();
-        colors.add(new Color(1, "RED", 3,3,3));
+        colors.add(new Color(1, "White", 0,0,0));
 
 
 
@@ -37,36 +34,14 @@ public class Main {
                 null,
                 "THis is review of product p1!",
                 new Brand(2, "Samsung","SAMSUNG"),
-                attrR,
+                attrL,
                 colors,
                 new Guaranty(1,"12 months MICROTELL"),
                 3000L);
 
-        Product p2 = new Product(
-                "p2",
-                "P2",
-                30000000L,
-                ProductStatus.UNAVAILABLE,
-                5,
-                "THis is product p2!",
-                92342,
-                2343,
-                null,
-                "THis is review of product p2!",
-                new Brand(2, "Apple","APPLE"),
-                attrR,
-                colors,
-                new Guaranty(2,"6 months MICROTELL"),
-                5000L);
+        p1.save();
 
 
-        List<Product> productList = new ArrayList<>();
-        productList.add(p1);
-        productList.add(p2);
-
-        //FilterProducts filterProducts = new FilterByCategory();
-
-        Session session = Hibernate.getSessionFactory().openSession();
         logger.info("success session");
 
     }
