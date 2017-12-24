@@ -9,7 +9,7 @@ public class Order{
 
     @Id
     @Column
-    @GeneratedValue(generator = "increment")
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private String id;
     @Column
     private Date time;
@@ -23,8 +23,8 @@ public class Order{
     private OrderStatus status;
     @Column
     private Long transmissionCost;
-    @Column
-    @OneToOne
+    @ManyToOne
+    @JoinColumn
     private Address destination;
 
 

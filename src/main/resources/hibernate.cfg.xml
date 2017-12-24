@@ -4,8 +4,8 @@
         "http://hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
     <session-factory>
-        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
-        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/OnlineShopping</property>
+        <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/shopping</property>
         <property name="hibernate.connection.username">root</property>
         <property name="hibernate.connection.password">asdasd</property>
         <property name="hibernate.connection.pool_size">2</property>
@@ -18,7 +18,7 @@
         <!-- JDBC connection pool (use the built-in) -->
         <property name="connection_pool_size">true</property>
         <!-- Drop and re-create the database schema on startup -->
-        <property name="hbmdl.auto">update</property>
+        <property name="hbm2ddl.auto">create</property>
         <!-- Names the annotated entity class -->
         <mapping class="Model.Product.AttributeManagement.Attribute" />
         <mapping class="Model.Product.AttributeManagement.AttributeGroup" />

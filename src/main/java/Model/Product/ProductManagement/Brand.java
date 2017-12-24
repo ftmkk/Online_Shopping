@@ -1,17 +1,14 @@
 package Model.Product.ProductManagement;
 
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Brand {
 
     @Id
     @Column
-    @GeneratedValue(generator = "increment")
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
     @Column
     private String name;

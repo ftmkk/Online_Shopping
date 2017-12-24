@@ -1,23 +1,20 @@
 package Model.Product.AttributeManagement;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
-public class Attribute<Object> {
+public class Attribute {
 
     @Id
     @Column
-    @GeneratedValue(generator = "increment")
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
     @Column
     private String title;
     @Column
-    private Object value;
+    private String value;
 
-    public Attribute(Integer id, String title, Object value) {
+    public Attribute(Integer id, String title, String value) {
         this.id = id;
         this.title = title;
         this.value = value;
@@ -38,16 +35,17 @@ public class Attribute<Object> {
         this.title = title;
     }
 
-    public void setValue(Object value) {
-        this.value = value;
-    }
-
     public String getTitle() {
         return title;
     }
 
-    public Object getValue() {
+
+    public String getValue() {
         return value;
+    }
+
+    public void setValue(String value) {
+        this.value = value;
     }
 
     public boolean equals(Attribute attribute){

@@ -4,12 +4,12 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-@Inheritance
-public abstract class AbstractContent {
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+public abstract class Content {
 
     @Id
     @Column
-    @GeneratedValue(generator = "increment")
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 
     abstract void setContents();

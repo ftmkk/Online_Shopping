@@ -9,7 +9,7 @@ public class AttributeRepository {
 
     @Id
     @Column
-    @GeneratedValue(generator = "increment")
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
     @Column
     @OneToMany

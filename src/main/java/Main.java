@@ -1,23 +1,28 @@
 import Controller.Product.FilterManagement.FilterByAttribute;
 import Controller.Product.FilterManagement.FilterByCategory;
 import Controller.Product.FilterManagement.FilterProducts;
+import Model.Hibernate;
 import Model.Product.AttributeManagement.Attribute;
 import Model.Product.AttributeManagement.AttributeGroup;
 import Model.Product.AttributeManagement.AttributeRepository;
 import Model.Product.ProductManagement.*;
+import org.hibernate.Session;
 import org.w3c.dom.css.RGBColor;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Logger;
 
 public class Main {
+
+    public static Logger logger = Logger.getLogger(String.valueOf(Main.class));
 
     public static void main(String[] args) {
 
         AttributeRepository attrR = new AttributeRepository();
         AttributeGroup attrG = new AttributeGroup("CATEGORY_1");
-        attrG.addAttribute(new Attribute<>(1, "ATTRIBUTE_A", 2));
-        attrG.addAttribute(new Attribute<>(2,"ATTRIBUTE_B",true));
+        attrG.addAttribute(new Attribute(1, "ATTRIBUTE_A", "2"));
+        attrG.addAttribute(new Attribute(2,"ATTRIBUTE_B","true"));
         attrR.addAttributeGroup(attrG);
         List<Color> colors = new ArrayList<>();
         colors.add(new Color(1, "RED", 3,3,3));
@@ -64,6 +69,9 @@ public class Main {
         productList.add(p2);
 
         //FilterProducts filterProducts = new FilterByCategory();
+
+        Session session = Hibernate.getSessionFactory().openSession();
+        logger.info("success session");
 
     }
 }

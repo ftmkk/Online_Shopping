@@ -8,7 +8,7 @@ public class AttributeGroup {
 
     @Id
     @Column
-    @GeneratedValue(generator = "increment")
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
     @Column
     private String title;

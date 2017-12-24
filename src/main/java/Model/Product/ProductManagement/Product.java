@@ -5,11 +5,11 @@ import Model.Product.AttributeManagement.AttributeRepository;
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.Map;
 import java.util.List;
 
 @Entity
-public class Product extends AbstractContent{
+@PrimaryKeyJoinColumn
+public class Product extends Content {
 
     @Column
     private String name;
@@ -32,17 +32,17 @@ public class Product extends AbstractContent{
     private Date releaseDate;
     @Column
     private String review;
-    @Column
-    @OneToOne
+    @ManyToOne
+    @JoinColumn
     private Brand brand;
-    @Column
-    @OneToOne
+    @ManyToOne
+    @JoinColumn
     private AttributeRepository attributes;
     @Column
     @OneToMany
     private List<Color> colors;
-    @Column
-    @OneToOne
+    @ManyToOne
+    @JoinColumn
     private Guaranty guaranty;
     @Column
     private Long discount;

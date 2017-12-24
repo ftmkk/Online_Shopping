@@ -14,7 +14,7 @@ public class User {
 
     @Id
     @Column
-    @GeneratedValue(generator = "increament")
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
     @Column
     private String name;

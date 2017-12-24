@@ -10,17 +10,17 @@ public class SelectedProduct {
 
     @Id
     @Column
-    @GeneratedValue(generator = "increment")
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
     @Column
     private Integer count;
     @Column
     private Long unitPrice;
-    @Column
-    @OneToOne
+    @ManyToOne
+    @JoinColumn
     private Color color;
-    @Column
-    @OneToOne
+    @ManyToOne
+    @JoinColumn
     private Guaranty guaranty;
     @Column
     private Long discount;
