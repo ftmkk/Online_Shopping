@@ -20,18 +20,18 @@
         <!-- Drop and re-create the database schema on startup -->
         <property name="hbm2ddl.auto">create</property>
         <!-- Names the annotated entity class -->
-        <mapping class="Model.Product.AttributeManagement.Attribute" />
-        <mapping class="Model.Product.AttributeManagement.AttributeGroup" />
-        <mapping class="Model.Product.AttributeManagement.AttributeRepository" />
-        <mapping class="Model.Product.ProductManagement.Brand" />
-        <mapping class="Model.Product.ProductManagement.Category" />
-        <mapping class="Model.Product.ProductManagement.Color" />
-        <mapping class="Model.Product.ProductManagement.Guaranty" />
-        <mapping class="Model.Product.ProductManagement.Product" />
-        <mapping class="Model.User.OrderManagement.Address" />
-        <mapping class="Model.User.OrderManagement.Order" />
-        <mapping class="Model.User.OrderManagement.SelectedProduct" />
-        <mapping class="Model.User.UserManagement.User" />
+        <mapping class="Model.ProductModel.AttributeManagement.Attribute" />
+        <mapping class="Model.ProductModel.AttributeManagement.AttributeGroup" />
+        <mapping class="Model.ProductModel.AttributeManagement.AttributeRepository" />
+        <mapping class="Model.ProductModel.ProductManagement.Brand" />
+        <mapping class="Model.ProductModel.ProductManagement.Category" />
+        <mapping class="Model.ProductModel.ProductManagement.Color" />
+        <mapping class="Model.ProductModel.ProductManagement.Guaranty" />
+        <mapping class="Model.ProductModel.ProductManagement.Product" />
+        <mapping class="Model.UserModel.OrderManagement.Address" />
+        <mapping class="Model.UserModel.OrderManagement.Order" />
+        <mapping class="Model.UserModel.OrderManagement.SelectedProduct" />
+        <mapping class="Model.UserModel.UserManagement.User" />
 
     </session-factory>
 </hibernate-configuration>

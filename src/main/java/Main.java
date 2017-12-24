@@ -1,13 +1,9 @@
-import Controller.Product.FilterManagement.FilterByAttribute;
-import Controller.Product.FilterManagement.FilterByCategory;
-import Controller.Product.FilterManagement.FilterProducts;
 import Model.Hibernate;
-import Model.Product.AttributeManagement.Attribute;
-import Model.Product.AttributeManagement.AttributeGroup;
-import Model.Product.AttributeManagement.AttributeRepository;
-import Model.Product.ProductManagement.*;
+import Model.ProductModel.AttributeManagement.Attribute;
+import Model.ProductModel.AttributeManagement.AttributeGroup;
+import Model.ProductModel.AttributeManagement.AttributeRepository;
+import Model.ProductModel.ProductManagement.*;
 import org.hibernate.Session;
-import org.w3c.dom.css.RGBColor;
 
 import java.util.ArrayList;
 import java.util.List;
