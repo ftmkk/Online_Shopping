@@ -3,15 +3,13 @@ package Model.User.OrderManagement;
 import Model.Product.ProductManagement.Color;
 import Model.Product.ProductManagement.Guaranty;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class SelectedProduct {
 
     @Id
+    @Column
     @GeneratedValue(generator = "increment")
     private Integer id;
     @Column
@@ -19,8 +17,10 @@ public class SelectedProduct {
     @Column
     private Long unitPrice;
     @Column
+    @OneToOne
     private Color color;
     @Column
+    @OneToOne
     private Guaranty guaranty;
     @Column
     private Long discount;
@@ -35,5 +35,8 @@ public class SelectedProduct {
         this.guaranty = guaranty;
         this.discount = discount;
         this.totalPrice = totalPrice;
+    }
+
+    public SelectedProduct() {
     }
 }

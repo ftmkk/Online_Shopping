@@ -5,7 +5,7 @@ import java.util.Date;
 import java.util.List;
 
 @Entity
-public class Order {
+public class Order{
 
     @Id
     @Column
@@ -36,6 +36,9 @@ public class Order {
         this.status = status;
         this.transmissionCost = transmissionCost;
         this.destination = destination;
+    }
+
+    public Order() {
     }
 
 

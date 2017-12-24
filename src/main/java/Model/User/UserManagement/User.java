@@ -59,6 +59,9 @@ public class User {
         this.addresses = addresses;
     }
 
+    public User() {
+    }
+
 
     public Integer getId() {
         return id;

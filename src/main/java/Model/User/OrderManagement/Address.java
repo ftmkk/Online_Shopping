@@ -44,6 +44,9 @@ public class Address {
         this.lon = lon;
     }
 
+    public Address() {
+    }
+
     public Integer getId() {
         return id;
     }

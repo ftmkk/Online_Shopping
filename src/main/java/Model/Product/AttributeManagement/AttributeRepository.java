@@ -1,10 +1,18 @@
 package Model.Product.AttributeManagement;
 
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
+@Entity
 public class AttributeRepository {
 
+    @Id
+    @Column
+    @GeneratedValue(generator = "increment")
+    private Integer id;
+    @Column
+    @OneToMany
     private List<AttributeGroup> attributeGroups;
 
     public AttributeRepository() {

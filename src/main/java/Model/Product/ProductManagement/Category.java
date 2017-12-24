@@ -2,15 +2,25 @@ package Model.Product.ProductManagement;
 
 import Model.Product.AttributeManagement.AttributeRepository;
 
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Category implements AbstractContent {
+@Entity
+public class Category extends AbstractContent {
 
+    @Column
     private String name;
+    @Column
     private String persianName;
+    @Column
+    @OneToMany
     private List<AbstractContent> contents;
+    @Column
+    @OneToMany
     private List<Brand> brands;
+    @Column
+    @OneToOne
     private AttributeRepository possibleAttrs;
 
 

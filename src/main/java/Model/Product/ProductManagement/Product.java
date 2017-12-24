@@ -2,49 +2,70 @@ package Model.Product.ProductManagement;
 
 import Model.Product.AttributeManagement.AttributeRepository;
 
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Map;
 import java.util.List;
 
-public class Product {
+@Entity
+public class Product extends AbstractContent{
 
+    @Column
     private String name;
+    @Column
     private String persianName;
+    @Column
     private Long price;
-    private Map<Date, Long> priceHistory;
+    @Column
+    @Enumerated
     private ProductStatus status;
+    @Column
     private Integer remainingCount;
+    @Column
     private String briefDescription;
+    @Column
     private Integer visitCount;
+    @Column
     private Integer sellCount;
+    @Column
     private Date releaseDate;
-    private List<String> images;
+    @Column
     private String review;
+    @Column
+    @OneToOne
     private Brand brand;
+    @Column
+    @OneToOne
     private AttributeRepository attributes;
+    @Column
+    @OneToMany
     private List<Color> colors;
+    @Column
+    @OneToOne
     private Guaranty guaranty;
+    @Column
     private Long discount;
 
-    public Product(String name, String persianName, Long price, Map<Date, Long> priceHistory, ProductStatus status, Integer remainingCount, String briefDescription, Integer visitCount, Integer sellCount, Date releaseDate, List<String> images, String review, Brand brand, AttributeRepository attributes, List<Color> colors, Guaranty guaranty, Long discount) {
+    public Product(String name, String persianName, Long price, ProductStatus status, Integer remainingCount, String briefDescription, Integer visitCount, Integer sellCount, Date releaseDate, String review, Brand brand, AttributeRepository attributes, List<Color> colors, Guaranty guaranty, Long discount) {
         this.name = name;
         this.persianName = persianName;
         this.price = price;
-        this.priceHistory = priceHistory;
         this.status = status;
         this.remainingCount = remainingCount;
         this.briefDescription = briefDescription;
         this.visitCount = visitCount;
         this.sellCount = sellCount;
         this.releaseDate = releaseDate;
-        this.images = images;
         this.review = review;
         this.brand = brand;
         this.attributes = attributes;
         this.colors = colors;
         this.guaranty = guaranty;
         this.discount = discount;
+    }
+
+    public Product() {
     }
 
     public String getName() {
@@ -57,10 +78,6 @@ public class Product {
 
     public Long getPrice() {
         return price;
-    }
-
-    public Map<Date, Long> getPriceHistory() {
-        return priceHistory;
     }
 
     public ProductStatus getStatus() {
@@ -85,10 +102,6 @@ public class Product {
 
     public Date getReleaseDate() {
         return releaseDate;
-    }
-
-    public List<String> getImages() {
-        return images;
     }
 
     public String getReview() {

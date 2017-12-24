@@ -1,15 +1,27 @@
 package Model.Product.AttributeManagement;
 
+import javax.persistence.*;
 import java.util.*;
 
+@Entity
 public class AttributeGroup {
 
+    @Id
+    @Column
+    @GeneratedValue(generator = "increment")
+    private Integer id;
+    @Column
     private String title;
+    @Column
+    @ManyToMany
     private Map<Integer, Attribute> attributes;
 
     public AttributeGroup(String title) {
         this.title = title;
         attributes = new HashMap<>();
+    }
+
+    public AttributeGroup() {
     }
 
     public String getTitle() {

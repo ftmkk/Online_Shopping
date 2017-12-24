@@ -1,10 +1,18 @@
 package Model.Product.ProductManagement;
 
+import javax.persistence.*;
 import java.util.List;
 
-public interface AbstractContent {
+@Entity
+@Inheritance
+public abstract class AbstractContent {
 
-    void setContents();
-    List<Product> getProducts();
+    @Id
+    @Column
+    @GeneratedValue(generator = "increment")
+    private Integer id;
+
+    abstract void setContents();
+    abstract List<Product> getProducts();
 
 }

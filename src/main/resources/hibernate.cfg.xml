@@ -20,6 +20,17 @@
         <!-- Drop and re-create the database schema on startup -->
         <property name="hbmdl.auto">update</property>
         <!-- Names the annotated entity class -->
+        <mapping class="Model.Product.AttributeManagement.Attribute" />
+        <mapping class="Model.Product.AttributeManagement.AttributeGroup" />
+        <mapping class="Model.Product.AttributeManagement.AttributeRepository" />
+        <mapping class="Model.Product.ProductManagement.Brand" />
+        <mapping class="Model.Product.ProductManagement.Category" />
+        <mapping class="Model.Product.ProductManagement.Color" />
+        <mapping class="Model.Product.ProductManagement.Guaranty" />
+        <mapping class="Model.Product.ProductManagement.Product" />
+        <mapping class="Model.User.OrderManagement.Address" />
+        <mapping class="Model.User.OrderManagement.Order" />
+        <mapping class="Model.User.OrderManagement.SelectedProduct" />
         <mapping class="Model.User.UserManagement.User" />
 
     </session-factory>
