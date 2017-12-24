@@ -12,18 +12,24 @@ public class ProductInBasket {
     @Column
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
-    @ManyToOne
+
     @JoinColumn
+    @ManyToOne(cascade=CascadeType.PERSIST)
     private Product product;
+
     @Column
     private Integer count;
-    @ManyToOne
+
     @JoinColumn
+    @ManyToOne(cascade=CascadeType.PERSIST)
     private Color color;
 
     public ProductInBasket(Product product, Integer count, Color color) {
         this.product = product;
         this.count = count;
         this.color = color;
+    }
+
+    public ProductInBasket() {
     }
 }

@@ -33,7 +33,7 @@ public class Main {
                 93,
                 null,
                 "THis is review of product p1!",
-                new Brand(2, "Samsung","SAMSUNG"),
+                new Brand("Samsung","SAMSUNG"),
                 attrL,
                 colors,
                 new Guaranty(1,"12 months MICROTELL"),

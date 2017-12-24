@@ -2,7 +2,6 @@ package Model.ProductModel;
 
 import Model.Hibernate;
 import org.hibernate.Session;
-import org.hibernate.annotations.Cascade;
 
 import javax.persistence.*;
 import java.util.*;
@@ -13,33 +12,45 @@ public class Product extends Content {
 
     @Column
     private Long price;
+
     @Column
     @Enumerated
     private ProductStatus status;
+
     @Column
     private Integer remainingCount;
+
     @Column
     private String briefDescription;
+
     @Column
     private Integer visitCount;
+
     @Column
     private Integer sellCount;
+
     @Column
     private Date releaseDate;
+
     @Column
     private String review;
-    @ManyToOne
+
     @JoinColumn
+    @ManyToOne(cascade=CascadeType.PERSIST)
     private Brand brand;
+
     @Column
-    @OneToMany
+    @OneToMany(cascade=CascadeType.PERSIST)
     private List<Attribute> attributes;
+
     @Column
-    @OneToMany
+    @OneToMany(cascade=CascadeType.PERSIST)
     private List<Color> colors;
-    @ManyToOne
+
     @JoinColumn
+    @ManyToOne(cascade=CascadeType.PERSIST)
     private Guaranty guaranty;
+
     @Column
     private Long discount;
 
@@ -130,5 +141,6 @@ public class Product extends Content {
     public void save(){
         Session session = Hibernate.getSessionFactory().openSession();
         session.save(this);
+        session.close();
     }
 }

@@ -12,9 +12,11 @@ public class OrderedProduct extends Product {
 
     @Column
     private Integer count;
-    @ManyToOne
+
     @JoinColumn
+    @ManyToOne(cascade=CascadeType.PERSIST)
     private Color color;
+
     @Column
     private Long totalPrice;
 

@@ -13,32 +13,43 @@ public class User {
     @Column
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
+
     @Column
     private String name;
+
     @Column
     private String phoneNumber;
+
     @Column
     private String mobileNumber;
+
     @Column
     private String email;
+
     @Column
     @Enumerated
     private Gender gender;
+
     @Column
     private String residenceAddress;
+
     @Column
     private Date birthDate;
+
     @Column
-    @OneToMany
+    @OneToMany(cascade=CascadeType.PERSIST)
     private List<Order> orderList;
+
     @Column
-    @OneToMany
+    @OneToMany(cascade=CascadeType.PERSIST)
     private List<Product> wishList;
+
     @Column
-    @OneToMany
+    @OneToMany(cascade=CascadeType.PERSIST)
     private List<ProductInBasket> basketList;
+
     @Column
-    @OneToMany
+    @OneToMany(cascade=CascadeType.PERSIST)
     private List<Address> addresses;
 
     public User(String name, String phoneNumber, String mobileNumber, String email, Gender gender, String residenceAddress, Date birthDate, List<Order> orderList, List<Product> wishList, List<ProductInBasket> basketList, List<Address> addresses) {

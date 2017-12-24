@@ -9,12 +9,16 @@ public class Color {
     @Column
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
+
     @Column
     private String name;
+
     @Column
     private Integer r;
+
     @Column
     private Integer g;
+
     @Column
     private Integer b;
 

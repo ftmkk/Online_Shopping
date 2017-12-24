@@ -9,22 +9,31 @@ public class Address {
     @Column
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
+
     @Column
     private String name;
+
     @Column
     private String province;
+
     @Column
     private String city;
+
     @Column
     private String address;
+
     @Column
     private Long postalCode;
+
     @Column
     private String phoneNumber;
+
     @Column
     private String mobileNumber;
+
     @Column
     private Float lat;
+
     @Column
     private Float lon;
 

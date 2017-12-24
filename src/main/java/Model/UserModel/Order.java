@@ -10,20 +10,26 @@ public class Order{
     @Column
     @GeneratedValue(strategy = GenerationType.AUTO)
     private String id;
+
     @Column
     private Date time;
+
     @Column
     private Long amount;
+
     @Column
-    @OneToMany
+    @OneToMany(cascade=CascadeType.PERSIST)
     private List<OrderedProduct> productList;
+
     @Column
     @Enumerated
     private OrderStatus status;
+
     @Column
     private Long transmissionCost;
-    @ManyToOne
+
     @JoinColumn
+    @ManyToOne(cascade=CascadeType.PERSIST)
     private Address destination;
 
 

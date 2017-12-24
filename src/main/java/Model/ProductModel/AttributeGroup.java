@@ -9,10 +9,12 @@ public class AttributeGroup {
     @Column
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
+
     @Column
     private String title;
-    @ManyToOne
+
     @JoinColumn
+    @ManyToOne
     private AttributeGroup nextAttributeGroup;
 
     public AttributeGroup(String title, AttributeGroup nextAttributeGroup) {

@@ -10,13 +10,16 @@ public class AttributeType {
     @Column
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
+
     @Column
     private String title;
+
     @JoinColumn
-    @ManyToOne
+    @ManyToOne(cascade=CascadeType.PERSIST)
     private AttributeType nextAttribute;
+
     @JoinColumn
-    @ManyToOne
+    @ManyToOne(cascade=CascadeType.PERSIST)
     private AttributeGroup attributeGroup;
 
 
