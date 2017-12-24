@@ -16,23 +16,23 @@ public class Main {
 
         AttributeRepository attrR = new AttributeRepository();
         AttributeGroup attrG = new AttributeGroup("CATEGORY_1");
-        attrG.addAttribute(new Attribute<>("ATTRIBUTE_A", 2));
-        attrG.addAttribute(new Attribute<>("ATTRIBUTE_B",true));
+        attrG.addAttribute(new Attribute<>(1, "ATTRIBUTE_A", 2));
+        attrG.addAttribute(new Attribute<>(2,"ATTRIBUTE_B",true));
         attrR.addAttributeGroup(attrG);
         List<Color> colors = new ArrayList<>();
         colors.add(new Color(1, "RED", 3,3,3));
+
+
 
         Product p1 = new Product(
                 "p1",
                 "P1",
                 10000000L,
-                null,
                 ProductStatus.AVAILABLE,
                 3,
                 "THis is product p1!",
                 91992,
                 93,
-                null,
                 null,
                 "THis is review of product p1!",
                 new Brand(2, "Samsung","SAMSUNG"),
@@ -45,13 +45,11 @@ public class Main {
                 "p2",
                 "P2",
                 30000000L,
-                null,
                 ProductStatus.UNAVAILABLE,
                 5,
                 "THis is product p2!",
                 92342,
                 2343,
-                null,
                 null,
                 "THis is review of product p2!",
                 new Brand(2, "Apple","APPLE"),
