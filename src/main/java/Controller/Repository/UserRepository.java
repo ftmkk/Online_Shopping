@@ -32,7 +32,7 @@ public class UserRepository implements IUserRepository {
         for(ProductInBasket productInBasket : user.getBasketList()){
 
 
-            OrderedProduct orderedProduct = new OrderedProduct(productInBasket.getProduct());
+            OrderedProduct orderedProduct = new OrderedProduct(productInBasket);
             orderedProduct.setColor(productInBasket.getColor());
             orderedProduct.setCount(productInBasket.getCount());
             Long unitPrice = productInBasket.getProduct().getPrice() - productInBasket.getProduct().getDiscount();

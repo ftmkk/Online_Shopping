@@ -147,7 +147,8 @@ public class Main {
         ur.addUser(user);
         ur.addToWishListOfUser(user,pr1);
 
-        ProductInBasket productInBasket = new ProductInBasket(pr1,2, pr1.getColors().get(0));
+        System.out.println(pr1.getColors());
+        ProductInBasket productInBasket = new ProductInBasket(pr1,2, null);
         ur.addToBasketOfUser(user,productInBasket);
 
         Address destination = new Address(

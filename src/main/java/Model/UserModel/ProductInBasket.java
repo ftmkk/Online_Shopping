@@ -8,6 +8,7 @@ import org.hibernate.annotations.LazyCollectionOption;
 import javax.persistence.*;
 
 @Entity
+@Inheritance
 public class ProductInBasket {
 
     @Id
@@ -51,6 +52,22 @@ public class ProductInBasket {
 
     public Color getColor() {
         return color;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public void setProduct(Product product) {
+        this.product = product;
+    }
+
+    public void setCount(Integer count) {
+        this.count = count;
+    }
+
+    public void setColor(Color color) {
+        this.color = color;
     }
 
     @Override
