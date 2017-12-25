@@ -1,7 +1,7 @@
 import Controller.Filter.FilterByBrand;
 import Controller.Filter.FilterByCategory;
 import Controller.Filter.FilterProducts;
-import Controller.Repository.*;
+import Controller.DataController.*;
 import Controller.Sort.SortByPrice;
 import Controller.Sort.SortProducts;
 import Model.ProductModel.*;
@@ -85,7 +85,7 @@ public class Main {
                 3000L);
 
 
-        IProductRepository pr = new ProductRepository();
+        IProductController pr = new ProductController();
         pr.addProduct(p1);
         pr.addProduct(p2);
         pr.addProduct(p3);
@@ -99,7 +99,7 @@ public class Main {
         Product pr2 = pr.getProductByName("p2");
         Product pr3 = pr.getProductByName("p3");
 
-        ICategoryRepository cr = new CategoryRepository();
+        ICategoryController cr = new CategoryController();
 
         cr.addCategory(categoryA);
         cr.addCategory(categoryB);
@@ -133,7 +133,7 @@ public class Main {
         System.out.println(fp2.filter());
 
 
-        IUserRepository ur = new UserRepository();
+        IUserController ur = new UserController();
 
         User user = new User(
                 "Fatemeh",

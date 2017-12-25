@@ -1,7 +1,7 @@
 package Controller.Sort;
 
-import Controller.Repository.IProductRepository;
-import Controller.Repository.ProductRepository;
+import Controller.DataController.IProductController;
+import Controller.DataController.ProductController;
 import Model.ProductModel.*;
 import junit.framework.TestCase;
 
@@ -76,7 +76,7 @@ public class SortProductsTest extends TestCase {
                 3000L);
 
 
-        IProductRepository pr = new ProductRepository();
+        IProductController pr = new ProductController();
         pr.addProduct(p1);
         pr.addProduct(p2);
         pr.addProduct(p3);

@@ -1,6 +1,6 @@
 package Controller.Filter;
 
-import Controller.Repository.*;
+import Controller.DataController.*;
 import Model.ProductModel.*;
 import junit.framework.TestCase;
 
@@ -76,7 +76,7 @@ public class FilterProductsTest extends TestCase {
                 3000L);
 
 
-        IProductRepository pr = new ProductRepository();
+        IProductController pr = new ProductController();
         pr.addProduct(p1);
         pr.addProduct(p2);
         pr.addProduct(p3);
@@ -90,7 +90,7 @@ public class FilterProductsTest extends TestCase {
         Product pr2 = pr.getProductByName("p2");
         Product pr3 = pr.getProductByName("p3");
 
-        ICategoryRepository cr = new CategoryRepository();
+        ICategoryController cr = new CategoryController();
 
         cr.addCategory(categoryA);
         cr.addCategory(categoryB);
