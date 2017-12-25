@@ -13,6 +13,11 @@ public class UserRepository implements IUserRepository {
     }
 
     @Override
+    public User getUserByUsername(String username) {
+        return User.getByUsername(username);
+    }
+
+    @Override
     public boolean addToBasketOfUser(User user, ProductInBasket productInBasket) {
         if(productInBasket.getProduct().getRemainingCount() >= productInBasket.getCount()){
             return user.addProductInBasketIfNotExist(productInBasket);
