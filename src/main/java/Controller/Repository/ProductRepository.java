@@ -16,7 +16,6 @@ public class ProductRepository implements IProductRepository {
         //SET ATTRIBUTES
         for(Attribute attribute : product.getAttributes()){
             attribute.getAttributeGroup().addIfNotExistName();
-            System.out.println("G:"+attribute.getAttributeGroup().getId());
         }
 
         //SET COLORS

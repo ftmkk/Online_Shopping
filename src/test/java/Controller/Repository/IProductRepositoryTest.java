@@ -38,7 +38,7 @@ public class IProductRepositoryTest extends TestCase {
         pr.addProduct(p1);
 
         Product pr1_byId = pr.getProductById(p1.getId());
-        assertEquals(pr1_byId,p1);
+        assertSame(pr1_byId.getId(),p1.getId());
     }
 
 
@@ -72,7 +72,7 @@ public class IProductRepositoryTest extends TestCase {
         pr.addProduct(p1);
 
         Product pr1_byName = pr.getProductByName(p1.getName());
-        assertEquals(pr1_byName,p1);
+        assertEquals(pr1_byName.getId(),p1.getId());
     }
 
     public void testGetProducts() {

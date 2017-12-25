@@ -50,6 +50,34 @@ public class OrderPackage{
         this.destination = destination;
     }
 
+    public Integer getId() {
+        return id;
+    }
+
+    public Date getTime() {
+        return time;
+    }
+
+    public Long getAmount() {
+        return amount;
+    }
+
+    public List<OrderedProduct> getProductList() {
+        return productList;
+    }
+
+    public OrderStatus getStatus() {
+        return status;
+    }
+
+    public Long getTransmissionCost() {
+        return transmissionCost;
+    }
+
+    public Address getDestination() {
+        return destination;
+    }
+
     @Override
     public String toString() {
         return "OrderPackage{" +
