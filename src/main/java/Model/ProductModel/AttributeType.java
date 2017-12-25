@@ -59,9 +59,6 @@ public class AttributeType {
     }
 
 
-
-
-
     @Override
     public String toString() {
         return "AttributeType{" +

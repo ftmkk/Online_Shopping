@@ -16,19 +16,21 @@ public class Category extends Content {
     @LazyCollection(LazyCollectionOption.FALSE)
     private List<Content> contents;
 
-    public Category(String name, String persianName, List<Content> contents) {
+    public Category(String name, String persianName) {
         super(name, persianName);
-        this.contents = contents;
+        this.contents = new ArrayList<>();
     }
 
     public Category() {
     }
 
-    public void setContents() {
-        //QUERY
-        for(Content content : contents){
-           content.setContents();
-        }
+
+    public List<Content> getContents() {
+        return contents;
+    }
+
+    public void setContents(List<Content> contents) {
+        this.contents = contents;
     }
 
     public List<Product> getProducts(){

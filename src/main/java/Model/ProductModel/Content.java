@@ -21,7 +21,6 @@ public abstract class Content {
     protected Content() {
     }
 
-    abstract void setContents();
     abstract List<Product> getProducts();
 
     public String getName() {

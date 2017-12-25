@@ -1,6 +1,6 @@
 package Model;
 
-import Model.UserModel.User;
+import Model.ProductModel.Product;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -8,10 +8,7 @@ import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.criterion.Restrictions;
 
-import javax.persistence.criteria.CriteriaBuilder;
-import java.io.Serializable;
 import java.util.List;
-import java.util.logging.Logger;
 
 public class Hibernate {
 
@@ -46,6 +43,24 @@ public class Hibernate {
                 return false;
             }
 
+        }
+        catch (Exception e) {
+            if (tx!=null) tx.rollback();
+            throw e;
+        }
+        finally {
+            session.close();
+        }
+    }
+
+    public static void update(Object obj){
+        Session session = Hibernate.getSessionFactory().openSession();
+        Transaction tx = null;
+        try {
+            tx = session.beginTransaction();
+            session.update(obj);
+            session.flush();
+            tx.commit();
         }
         catch (Exception e) {
             if (tx!=null) tx.rollback();
@@ -107,6 +122,47 @@ public class Hibernate {
             session.save(obj);
             session.flush();
             tx.commit();
+        }
+        catch (Exception e) {
+            if (tx!=null) tx.rollback();
+            throw e;
+        }
+        finally {
+            session.close();
+        }
+    }
+
+    @SuppressWarnings("Duplicates")
+    public static List<Object> getAll(Class className){
+        Session session = Hibernate.getSessionFactory().openSession();
+        Transaction tx = null;
+        try {
+            tx = session.beginTransaction();
+            Criteria criteria = session.createCriteria(className);
+            List<Object> results = criteria.list();
+            tx.commit();
+            return results;
+        }
+        catch (Exception e) {
+            if (tx!=null) tx.rollback();
+            throw e;
+        }
+        finally {
+            session.close();
+        }
+    }
+
+
+    public static List<Object> getByFilter(Class className,String key, String value){
+        Session session = Hibernate.getSessionFactory().openSession();
+        Transaction tx = null;
+        try {
+            tx = session.beginTransaction();
+            Criteria criteria = session.createCriteria(className);
+            criteria.add(Restrictions.eq(key,value));
+            List<Object> results = criteria.list();
+            tx.commit();
+            return results;
         }
         catch (Exception e) {
             if (tx!=null) tx.rollback();

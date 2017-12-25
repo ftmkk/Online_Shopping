@@ -64,10 +64,6 @@ public class Product extends Content {
     public Product() {
     }
 
-    public void setContents(){
-
-    }
-
 
     public Product(String name, String persianName, Long price, ProductStatus status, Integer remainingCount, String briefDescription, Integer visitCount, Integer sellCount, Date releaseDate, String review, Brand brand, List<Attribute> attributes, List<Color> colors, Guaranty guaranty, Long discount) {
         super(name, persianName);
