@@ -8,10 +8,10 @@ import java.util.List;
 public class FilterByPrice extends OptionalFilter{
 
     private FilterProducts filterProducts;
-    private Integer minPrice;
-    private Integer maxPrice;
+    private Long minPrice;
+    private Long maxPrice;
 
-    public FilterByPrice(FilterProducts filterProducts, Integer minPrice, Integer maxPrice) {
+    public FilterByPrice(FilterProducts filterProducts, Long minPrice, Long maxPrice) {
         this.filterProducts = filterProducts;
         this.minPrice = minPrice;
         this.maxPrice = maxPrice;

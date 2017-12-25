@@ -1,16 +1,16 @@
-package Controller.Filter;
+package Controller.Sort;
 
-import Controller.Repository.*;
+import Controller.Repository.IProductRepository;
+import Controller.Repository.ProductRepository;
 import Model.ProductModel.*;
 import junit.framework.TestCase;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class FilterProductsTest extends TestCase {
+public class SortProductsTest extends TestCase {
 
-    public void testFilter() {
-
+    public void testSort() {
         List<Attribute> attrL1 = new ArrayList<>();
         List<Attribute> attrL2 = new ArrayList<>();
         List<Attribute> attrL3 = new ArrayList<>();
@@ -26,12 +26,12 @@ public class FilterProductsTest extends TestCase {
         Product p1 = new Product(
                 "p1",
                 "P1",
-                50000000L,
+                10000000L,
                 ProductStatus.AVAILABLE,
-                233,
+                3,
                 "THis is product p1!",
-                2234,
-                923,
+                91992,
+                93,
                 null,
                 "THis is review of product p1!",
                 new Brand("Samsung","SAMSUNG"),
@@ -81,43 +81,16 @@ public class FilterProductsTest extends TestCase {
         pr.addProduct(p2);
         pr.addProduct(p3);
 
-        Category categoryA = new Category("a","a");
-        Category categoryB = new Category("b","b");
-        Category categoryC = new Category("c","c");
-
-
-        Product pr1 = pr.getProductByName("p1");
-        Product pr2 = pr.getProductByName("p2");
-        Product pr3 = pr.getProductByName("p3");
-
-        ICategoryRepository cr = new CategoryRepository();
-
-        cr.addCategory(categoryA);
-        cr.addCategory(categoryB);
-        cr.addCategory(categoryC);
-
-        Category catA = cr.getCategoryByName("a");
-        Category catB = cr.getCategoryByName("b");
-        Category catC = cr.getCategoryByName("c");
-
-        cr.addProductToCategory(pr1,catC);
-        cr.addProductToCategory(pr2,catC);
-        cr.addProductToCategory(pr3,catB);
-        cr.addCategoryToCategory(catB,catA);
-        cr.addCategoryToCategory(catC,catA);
-
-        FilterProducts A = new FilterByCategory(catC);
-
-        List<Brand> brandList = new ArrayList<>();
-        brandList.add(new Brand("Samsung","SAMSUNG"));
-        FilterProducts C_Samsung = new FilterByBrand(A, brandList);
-
-        FilterProducts C_Samsung_Price = new FilterByPrice(C_Samsung,40000000L,60000000L);
-
-        for(Product product : C_Samsung_Price.filter()){
-            assertEquals(p1.getId(),product.getId());
+        List<Product> all = pr.getProducts();
+        SortProducts sp = new SortByPrice(all,true);
+        List<Product> sortedList= sp.sort();
+        boolean correct = true;
+        for(int i = 1 ; i < sortedList.size() ; i++){
+            if(sortedList.get(i).getPrice() < sortedList.get(i-1).getPrice()){
+                correct = false;
+            }
+            assertTrue(correct);
         }
-
 
     }
 }
