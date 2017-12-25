@@ -1,5 +1,8 @@
 package Model.UserModel;
 
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
+
 import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
@@ -19,6 +22,7 @@ public class OrderPackage{
 
     @Column
     @OneToMany(cascade=CascadeType.ALL)
+    @LazyCollection(LazyCollectionOption.FALSE)
     private List<OrderedProduct> productList;
 
     @Column
@@ -30,6 +34,7 @@ public class OrderPackage{
 
     @JoinColumn
     @ManyToOne(cascade=CascadeType.ALL)
+    @LazyCollection(LazyCollectionOption.FALSE)
     private Address destination;
 
 
@@ -43,5 +48,18 @@ public class OrderPackage{
         this.status = status;
         this.transmissionCost = transmissionCost;
         this.destination = destination;
+    }
+
+    @Override
+    public String toString() {
+        return "OrderPackage{" +
+                "id=" + id +
+                ", time=" + time +
+                ", amount=" + amount +
+                ", productList=" + productList +
+                ", status=" + status +
+                ", transmissionCost=" + transmissionCost +
+                ", destination=" + destination +
+                '}';
     }
 }

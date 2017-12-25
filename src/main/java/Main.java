@@ -1,6 +1,6 @@
-import Model.Hibernate;
+import Controller.ProductController.Repository.IProductRepository;
+import Controller.ProductController.Repository.ProductRepository;
 import Model.ProductModel.*;
-import org.hibernate.Session;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,14 +13,11 @@ public class Main {
     public static void main(String[] args) {
 
         List<Attribute> attrL = new ArrayList<>();
-        AttributeGroup attrG = new AttributeGroup("CATEGORY_1",null);
-        attrL.add(new Attribute("wight","2.3 kg",attrG,null));
-        attrL.add(new Attribute("screen size","1.2 inch",attrG,null));
-
+        AttributeGroup attrG = new AttributeGroup("CATEGORY_1","kategory");
+        attrL.add(new Attribute("wight","2.3 kg",attrG));
+        attrL.add(new Attribute("screen size","1.2 inch",attrG));
         List<Color> colors = new ArrayList<>();
-        colors.add(new Color("White","White", 0,0,0));
-
-
+        colors.add(new Color("White","sefid", 0,0,0));
 
         Product p1 = new Product(
                 "p1",
@@ -39,8 +36,11 @@ public class Main {
                 new Guaranty("12 months MICROTELL"),
                 3000L);
 
-        p1.save();
+        IProductRepository pr = new ProductRepository();
+        pr.addProduct(p1);
 
+        Product p2 = pr.getProductById(p1.getId());
+        System.out.println(p2);
 
         logger.info("success session");
 

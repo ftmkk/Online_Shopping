@@ -1,6 +1,8 @@
 package Model.UserModel;
 
 import Model.ProductModel.*;
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -15,6 +17,7 @@ public class OrderedProduct extends Product {
 
     @JoinColumn
     @ManyToOne(cascade=CascadeType.ALL)
+    @LazyCollection(LazyCollectionOption.FALSE)
     private Color color;
 
     @Column
@@ -29,5 +32,14 @@ public class OrderedProduct extends Product {
     }
 
     public OrderedProduct() {
+    }
+
+    @Override
+    public String toString() {
+        return "OrderedProduct{" +
+                "count=" + count +
+                ", color=" + color +
+                ", totalPrice=" + totalPrice +
+                '}';
     }
 }

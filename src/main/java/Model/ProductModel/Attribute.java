@@ -1,5 +1,7 @@
 package Model.ProductModel;
 
+import Model.Hibernate;
+
 import javax.persistence.*;
 
 @Entity
@@ -15,12 +17,19 @@ public class Attribute extends AttributeType{
         return value;
     }
 
-    public Attribute(String value) {
+    public Attribute(String title, String value, AttributeGroup attributeGroup) {
+        super(title,  attributeGroup);
         this.value = value;
     }
 
-    public Attribute(String title, String value, AttributeGroup attributeGroup, AttributeType nextAttribute) {
-        super(title, nextAttribute, attributeGroup);
-        this.value = value;
+    public void add(){
+        Hibernate.add(this);
+    }
+
+    @Override
+    public String toString() {
+        return "Attribute{" +
+                "value='" + value + '\'' +
+                '}';
     }
 }

@@ -1,10 +1,11 @@
 package Model.ProductModel;
 
 
+import Model.Hibernate;
+
 import javax.persistence.*;
 
 @Entity
-
 public class Brand {
 
     @Id
@@ -13,11 +14,9 @@ public class Brand {
     private Integer id;
 
     @Column(unique = true)
-    @Transient
     private String name;
 
-    @Column(unique = true)
-    @Transient
+    @Column
     private String persianName;
 
     public Brand(String name, String persianName) {
@@ -28,7 +27,55 @@ public class Brand {
     public Brand() {
     }
 
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getPersianName() {
+        return persianName;
+    }
+
+    public void setPersianName(String persianName) {
+        this.persianName = persianName;
+    }
+
     public boolean equals(Brand brand){
         return this.id.equals(brand.id);
+    }
+
+
+    public boolean addIfNotExistName(){
+        String key = "name";
+        String value = this.getName();
+        boolean result = Hibernate.addIfNotExist(this,key,value);
+        Brand b = (Brand) Hibernate.getByKey(this.getClass(),key,value);
+        this.setId(b.getId());
+        return result;
+    }
+
+    public void flush(){
+
+    }
+
+    @Override
+    public String toString() {
+        return "Brand{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", persianName='" + persianName + '\'' +
+                '}';
     }
 }

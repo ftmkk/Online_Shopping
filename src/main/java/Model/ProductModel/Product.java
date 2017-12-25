@@ -3,6 +3,8 @@ package Model.ProductModel;
 import Model.Hibernate;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
 
 import javax.persistence.*;
 import java.util.*;
@@ -38,18 +40,22 @@ public class Product extends Content {
 
     @JoinColumn
     @ManyToOne(cascade=CascadeType.ALL)
+    @LazyCollection(LazyCollectionOption.FALSE)
     private Brand brand;
 
     @Column
     @OneToMany(cascade=CascadeType.ALL)
+    @LazyCollection(LazyCollectionOption.FALSE)
     private List<Attribute> attributes;
 
     @Column
     @OneToMany(cascade=CascadeType.ALL)
+    @LazyCollection(LazyCollectionOption.FALSE)
     private List<Color> colors;
 
     @JoinColumn
     @ManyToOne(cascade=CascadeType.ALL)
+    @LazyCollection(LazyCollectionOption.FALSE)
     private Guaranty guaranty;
 
     @Column
@@ -61,6 +67,7 @@ public class Product extends Content {
     public void setContents(){
 
     }
+
 
     public Product(String name, String persianName, Long price, ProductStatus status, Integer remainingCount, String briefDescription, Integer visitCount, Integer sellCount, Date releaseDate, String review, Brand brand, List<Attribute> attributes, List<Color> colors, Guaranty guaranty, Long discount) {
         super(name, persianName);
@@ -92,7 +99,6 @@ public class Product extends Content {
     public Brand getBrand() {
         return brand;
     }
-
 
 
     public Long getPrice() {
@@ -139,20 +145,84 @@ public class Product extends Content {
         return discount;
     }
 
-    public void save(){
-        Session session = Hibernate.getSessionFactory().openSession();
-        Transaction tx = null;
-        try {
-            tx = session.beginTransaction();
-            session.saveOrUpdate(this);
-            tx.commit();
-        }
-        catch (Exception e) {
-            if (tx!=null) tx.rollback();
-            throw e;
-        }
-        finally {
-            session.close();
-        }
+
+    public void setPrice(Long price) {
+        this.price = price;
+    }
+
+    public void setStatus(ProductStatus status) {
+        this.status = status;
+    }
+
+    public void setRemainingCount(Integer remainingCount) {
+        this.remainingCount = remainingCount;
+    }
+
+    public void setBriefDescription(String briefDescription) {
+        this.briefDescription = briefDescription;
+    }
+
+    public void setVisitCount(Integer visitCount) {
+        this.visitCount = visitCount;
+    }
+
+    public void setSellCount(Integer sellCount) {
+        this.sellCount = sellCount;
+    }
+
+    public void setReleaseDate(Date releaseDate) {
+        this.releaseDate = releaseDate;
+    }
+
+    public void setReview(String review) {
+        this.review = review;
+    }
+
+    public void setBrand(Brand brand) {
+        this.brand = brand;
+    }
+
+    public void setAttributes(List<Attribute> attributes) {
+        this.attributes = attributes;
+    }
+
+    public void setColors(List<Color> colors) {
+        this.colors = colors;
+    }
+
+    public void setGuaranty(Guaranty guaranty) {
+        this.guaranty = guaranty;
+    }
+
+    public void setDiscount(Long discount) {
+        this.discount = discount;
+    }
+
+    public boolean addIfNotExistName(){
+        String key = "name";
+        String value = this.getName();
+        boolean result = Hibernate.addIfNotExist(this,key,value);
+        Product g = (Product) Hibernate.getByKey(this.getClass(),key,value);
+        this.setId(g.getId());
+        return result;
+    }
+
+    @Override
+    public String toString() {
+        return "Product{" +
+                "price=" + price +
+                ", status=" + status +
+                ", remainingCount=" + remainingCount +
+                ", briefDescription='" + briefDescription + '\'' +
+                ", visitCount=" + visitCount +
+                ", sellCount=" + sellCount +
+                ", releaseDate=" + releaseDate +
+                ", review='" + review + '\'' +
+                ", brand=" + brand +
+                ", attributes=" + attributes +
+                ", colors=" + colors +
+                ", guaranty=" + guaranty +
+                ", discount=" + discount +
+                '}';
     }
 }

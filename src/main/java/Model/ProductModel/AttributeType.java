@@ -1,5 +1,8 @@
 package Model.ProductModel;
 
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
+
 import javax.persistence.*;
 
 @Entity
@@ -16,19 +19,55 @@ public class AttributeType {
 
     @JoinColumn
     @ManyToOne(cascade=CascadeType.ALL)
-    private AttributeType nextAttribute;
-
-    @JoinColumn
-    @ManyToOne(cascade=CascadeType.ALL)
+    @LazyCollection(LazyCollectionOption.FALSE)
     private AttributeGroup attributeGroup;
-
 
     public AttributeType() {
     }
 
-    public AttributeType(String title, AttributeType nextAttribute, AttributeGroup attributeGroup) {
+    public AttributeType(String title) {
         this.title = title;
-        this.nextAttribute = nextAttribute;
+    }
+
+    public AttributeType(String title, AttributeGroup attributeGroup) {
+        this.title = title;
         this.attributeGroup = attributeGroup;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public AttributeGroup getAttributeGroup() {
+        return attributeGroup;
+    }
+
+    public void setAttributeGroup(AttributeGroup attributeGroup) {
+        this.attributeGroup = attributeGroup;
+    }
+
+
+
+
+
+    @Override
+    public String toString() {
+        return "AttributeType{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", attributeGroup=" + attributeGroup +
+                '}';
     }
 }

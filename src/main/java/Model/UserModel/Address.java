@@ -53,4 +53,19 @@ public class Address {
     public Address() {
     }
 
+    @Override
+    public String toString() {
+        return "Address{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", province='" + province + '\'' +
+                ", city='" + city + '\'' +
+                ", address='" + address + '\'' +
+                ", postalCode=" + postalCode +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                ", mobileNumber='" + mobileNumber + '\'' +
+                ", lat=" + lat +
+                ", lon=" + lon +
+                '}';
+    }
 }

@@ -13,11 +13,9 @@ public abstract class Content {
     private Integer id;
 
     @Column(unique = true)
-    @Transient
     private String name;
 
-    @Column(unique = true)
-    @Transient
+    @Column
     private String persianName;
 
     protected Content() {
@@ -38,4 +36,31 @@ public abstract class Content {
         this.name = name;
         this.persianName = persianName;
     }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setPersianName(String persianName) {
+        this.persianName = persianName;
+    }
+
+
+    @Override
+    public String toString() {
+        return "Content{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", persianName='" + persianName + '\'' +
+                '}';
+    }
+
 }

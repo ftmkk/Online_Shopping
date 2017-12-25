@@ -1,5 +1,9 @@
 package Model.ProductModel;
 
+import Model.Hibernate;
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -9,6 +13,7 @@ public class Category extends Content {
 
     @Column
     @OneToMany(cascade=CascadeType.ALL)
+    @LazyCollection(LazyCollectionOption.FALSE)
     private List<Content> contents;
 
     public Category(String name, String persianName, List<Content> contents) {
@@ -35,5 +40,22 @@ public class Category extends Content {
             }
         }
         return products;
+    }
+
+
+    public boolean addIfNotExistName(){
+        String key = "name";
+        String value = this.getName();
+        boolean result = Hibernate.addIfNotExist(this,key,value);
+        Category g = (Category) Hibernate.getByKey(this.getClass(),key,value);
+        this.setId(g.getId());
+        return result;
+    }
+
+    @Override
+    public String toString() {
+        return "Category{" +
+                "contents=" + contents +
+                '}';
     }
 }

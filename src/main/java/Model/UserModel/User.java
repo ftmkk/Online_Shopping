@@ -1,6 +1,8 @@
 package Model.UserModel;
 
 import Model.ProductModel.Product;
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -14,8 +16,12 @@ public class User {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 
+
+    @Column(unique = true)
+    private String username;
+
     @Column
-    private String name;
+    private String password;
 
     @Column
     private String phoneNumber;
@@ -38,22 +44,27 @@ public class User {
 
     @Column
     @OneToMany(cascade=CascadeType.ALL)
+    @LazyCollection(LazyCollectionOption.FALSE)
     private List<OrderPackage> orderList;
 
     @Column
     @OneToMany(cascade=CascadeType.ALL)
+    @LazyCollection(LazyCollectionOption.FALSE)
     private List<Product> wishList;
 
     @Column
     @OneToMany(cascade=CascadeType.ALL)
+    @LazyCollection(LazyCollectionOption.FALSE)
     private List<ProductInBasket> basketList;
 
     @Column
     @OneToMany(cascade=CascadeType.ALL)
+    @LazyCollection(LazyCollectionOption.FALSE)
     private List<Address> addresses;
 
-    public User(String name, String phoneNumber, String mobileNumber, String email, Gender gender, String residenceAddress, Date birthDate, List<OrderPackage> orderList, List<Product> wishList, List<ProductInBasket> basketList, List<Address> addresses) {
-        this.name = name;
+    public User(String username, String password, String phoneNumber, String mobileNumber, String email, Gender gender, String residenceAddress, Date birthDate, List<OrderPackage> orderList, List<Product> wishList, List<ProductInBasket> basketList, List<Address> addresses) {
+        this.username = username;
+        this.password = password;
         this.phoneNumber = phoneNumber;
         this.mobileNumber = mobileNumber;
         this.email = email;
@@ -69,4 +80,23 @@ public class User {
     public User() {
     }
 
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                ", mobileNumber='" + mobileNumber + '\'' +
+                ", email='" + email + '\'' +
+                ", gender=" + gender +
+                ", residenceAddress='" + residenceAddress + '\'' +
+                ", birthDate=" + birthDate +
+                ", orderList=" + orderList +
+                ", wishList=" + wishList +
+                ", basketList=" + basketList +
+                ", addresses=" + addresses +
+                '}';
+    }
 }

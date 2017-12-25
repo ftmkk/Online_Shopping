@@ -2,6 +2,8 @@ package Model.UserModel;
 
 import Model.ProductModel.Color;
 import Model.ProductModel.Product;
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
 
 import javax.persistence.*;
 
@@ -15,6 +17,7 @@ public class ProductInBasket {
 
     @JoinColumn
     @ManyToOne(cascade=CascadeType.ALL)
+    @LazyCollection(LazyCollectionOption.FALSE)
     private Product product;
 
     @Column
@@ -22,6 +25,7 @@ public class ProductInBasket {
 
     @JoinColumn
     @ManyToOne(cascade=CascadeType.ALL)
+    @LazyCollection(LazyCollectionOption.FALSE)
     private Color color;
 
     public ProductInBasket(Product product, Integer count, Color color) {
@@ -31,5 +35,15 @@ public class ProductInBasket {
     }
 
     public ProductInBasket() {
+    }
+
+    @Override
+    public String toString() {
+        return "ProductInBasket{" +
+                "id=" + id +
+                ", product=" + product +
+                ", count=" + count +
+                ", color=" + color +
+                '}';
     }
 }
