@@ -2,6 +2,7 @@ package Model.ProductModel;
 
 import javax.persistence.*;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
@@ -12,7 +13,7 @@ public abstract class Content {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 
-    @Column(unique = true)
+    @Column
     private String name;
 
     @Column

@@ -8,8 +8,16 @@ import java.util.List;
 
 public class SortByPrice implements SortProducts {
 
+    private List<Product> products;
+    private boolean isAsc;
+
+    public SortByPrice(List<Product> products, boolean isAsc) {
+        this.products = products;
+        this.isAsc = isAsc;
+    }
+
     @Override
-    public List<Product> sort(List<Product> products , final boolean isAsc) {
+    public List<Product> sort() {
 
         Collections.sort(products, new Comparator<Product>(){
             public int compare(Product o1, Product o2){

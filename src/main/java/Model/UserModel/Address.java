@@ -37,8 +37,7 @@ public class Address {
     @Column
     private Float lon;
 
-    public Address(Integer id, String name, String province, String city, String address, Long postalCode, String phoneNumber, String mobileNumber, Float lat, Float lon) {
-        this.id = id;
+    public Address(String name, String province, String city, String address, Long postalCode, String phoneNumber, String mobileNumber, Float lat, Float lon) {
         this.name = name;
         this.province = province;
         this.city = city;

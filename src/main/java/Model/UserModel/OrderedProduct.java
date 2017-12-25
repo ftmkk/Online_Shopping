@@ -9,7 +9,6 @@ import java.util.Date;
 import java.util.List;
 
 @Entity
-@PrimaryKeyJoinColumn
 public class OrderedProduct extends Product {
 
     @Column
@@ -28,6 +27,60 @@ public class OrderedProduct extends Product {
         super(name, persianName, price, status, remainingCount, briefDescription, visitCount, sellCount, releaseDate, review, brand, attributes, colors, guaranty, discount);
         this.count = count;
         this.color = color;
+    }
+
+    public OrderedProduct(Integer count, Color color, Long totalPrice, Product product) {
+
+        this.count = count;
+        this.color = color;
+        this.totalPrice = totalPrice;
+        this.setName(product.getName());
+        this.setPersianName(product.getPersianName());
+        this.setPrice(product.getPrice());
+        this.setStatus(product.getStatus());
+        this.setRemainingCount(product.getRemainingCount());
+        this.setBriefDescription(product.getBriefDescription());
+        this.setVisitCount(product.getVisitCount());
+        this.setSellCount(product.getSellCount());
+        this.setReleaseDate(product.getReleaseDate());
+        this.setReview(product.getReview());
+        this.setBrand(product.getBrand());
+        this.setAttributes(product.getAttributes());
+        this.setColors(product.getColors());
+        this.setGuaranty(product.getGuaranty());
+        this.setDiscount(product.getDiscount());
+
+    }
+    public OrderedProduct(Product product) {
+
+        this.setName(product.getName());
+        this.setPersianName(product.getPersianName());
+        this.setPrice(product.getPrice());
+        this.setStatus(product.getStatus());
+        this.setRemainingCount(product.getRemainingCount());
+        this.setBriefDescription(product.getBriefDescription());
+        this.setVisitCount(product.getVisitCount());
+        this.setSellCount(product.getSellCount());
+        this.setReleaseDate(product.getReleaseDate());
+        this.setReview(product.getReview());
+        this.setBrand(product.getBrand());
+        this.setAttributes(product.getAttributes());
+        this.setColors(product.getColors());
+        this.setGuaranty(product.getGuaranty());
+        this.setDiscount(product.getDiscount());
+
+    }
+
+
+    public void setCount(Integer count) {
+        this.count = count;
+    }
+
+    public void setColor(Color color) {
+        this.color = color;
+    }
+
+    public void setTotalPrice(Long totalPrice) {
         this.totalPrice = totalPrice;
     }
 

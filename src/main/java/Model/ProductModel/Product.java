@@ -203,6 +203,20 @@ public class Product extends Content {
         return result;
     }
 
+    public static Product getById(Integer id){
+        return (Product) Hibernate.getById(Product.class,id);
+    }
+
+    public static Product getByName(String name) {
+        return (Product) Hibernate.getByKey(Product.class,"name",name);
+    }
+
+
+    public static List<Product> getAll(){
+        return (List<Product>)(Object) Hibernate.getAll(Product.class);
+    }
+
+
     @Override
     public String toString() {
         return "Product{" +

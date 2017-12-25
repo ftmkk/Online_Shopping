@@ -1,10 +1,14 @@
+import Controller.Filter.FilterByBrand;
 import Controller.Filter.FilterByCategory;
 import Controller.Filter.FilterProducts;
-import Controller.Repository.CategoryRepository;
-import Controller.Repository.ICategoryRepository;
-import Controller.Repository.IProductRepository;
-import Controller.Repository.ProductRepository;
+import Controller.Repository.*;
+import Controller.Sort.SortByPrice;
+import Controller.Sort.SortProducts;
 import Model.ProductModel.*;
+import Model.UserModel.Address;
+import Model.UserModel.Gender;
+import Model.UserModel.ProductInBasket;
+import Model.UserModel.User;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -90,20 +94,76 @@ public class Main {
         Category categoryB = new Category("b","b");
         Category categoryC = new Category("c","c");
 
+
+        Product pr1 = pr.getProductByName("p1");
+        Product pr2 = pr.getProductByName("p2");
+        Product pr3 = pr.getProductByName("p3");
+
         ICategoryRepository cr = new CategoryRepository();
+
         cr.addCategory(categoryA);
         cr.addCategory(categoryB);
         cr.addCategory(categoryC);
-        cr.addProductToCategory(p1,categoryC);
-        cr.addProductToCategory(p2,categoryC);
-        cr.addProductToCategory(p3,categoryB);
-        cr.addCategoryToCategory(categoryB,categoryA);
-        cr.addCategoryToCategory(categoryC,categoryA);
+
+        Category catA = cr.getCategoryByName("a");
+        Category catB = cr.getCategoryByName("b");
+        Category catC = cr.getCategoryByName("c");
+
+        cr.addProductToCategory(pr1,catC);
+        cr.addProductToCategory(pr2,catC);
+        cr.addProductToCategory(pr3,catB);
+        cr.addCategoryToCategory(catB,catA);
+        cr.addCategoryToCategory(catC,catA);
 
 
         logger.info("success session");
 
-        FilterProducts fp = new FilterByCategory(categoryA);
-        System.out.println(fp.filter());
+        FilterProducts fp = new FilterByCategory(catA);
+        List<Product> faltered = fp.filter();
+        SortProducts sp = new SortByPrice(faltered,false);
+        List<Product> sortedList= sp.sort();
+        for(Product p : sortedList){
+            System.out.println(p.toString());
+        }
+
+        List<Brand> brandList = new ArrayList<>();
+        brandList.add(new Brand("Samsung","SAMSUNG"));
+        FilterProducts fp2 = new FilterByBrand(fp, brandList);
+
+        System.out.println(fp2.filter());
+
+
+        IUserRepository ur = new UserRepository();
+
+        User user = new User(
+                "Fatemeh",
+                "123123",
+                "09129999999",
+                "02177777777",
+                "ftm.karimkhani@gmail.com",
+                Gender.FEMALE,
+                "Iran, Tehran, IUST, COMP",
+                null);
+        ur.addUser(user);
+        ur.addToWishListOfUser(user,pr1);
+
+        ProductInBasket productInBasket = new ProductInBasket(pr1,2, pr1.getColors().get(0));
+        ur.addToBasketOfUser(user,productInBasket);
+
+        Address destination = new Address(
+                "ftmkk",
+                "Tehran",
+                "Tehran",
+                "IUST COMP",
+                29034902834L,
+                "02199999999",
+                "09129999999",
+                null,
+                null
+        );
+        ur.orderFromUser(user,destination);
+
+        System.out.println(user.getOrderList());
     }
 }
+

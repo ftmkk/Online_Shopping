@@ -44,7 +44,8 @@ public class Color implements Serializable {
     }
 
     public boolean equals(Color color){
-        return color.id.equals(this.id);
+        return color.getName().equals(this.getName());
+
     }
 
     public boolean addIfNotExistName(){

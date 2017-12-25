@@ -53,7 +53,7 @@ public class Brand {
     }
 
     public boolean equals(Brand brand){
-        return this.id.equals(brand.id);
+        return this.getName().equals(brand.getName());
     }
 
 

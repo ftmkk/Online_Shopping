@@ -1,6 +1,5 @@
 package Controller.Repository;
 
-import Model.Hibernate;
 import Model.ProductModel.Attribute;
 import Model.ProductModel.Color;
 import Model.ProductModel.Product;
@@ -34,11 +33,14 @@ public class ProductRepository implements IProductRepository {
     }
 
     public Product getProductById(Integer id){
-        return (Product) Hibernate.getById(Product.class,id);
+        return Product.getById(id);
     }
 
+    public Product getProductByName(String name) {
+        return Product.getByName(name);
+    }
 
-    public List<Product> getProducts(){
-        return (List<Product>)(Object) Hibernate.getAll(Product.class);
+    public List<Product> getProducts() {
+        return Product.getAll();
     }
 }

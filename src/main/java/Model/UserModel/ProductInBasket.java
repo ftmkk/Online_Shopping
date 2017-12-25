@@ -37,6 +37,22 @@ public class ProductInBasket {
     public ProductInBasket() {
     }
 
+    public Integer getId() {
+        return id;
+    }
+
+    public Product getProduct() {
+        return product;
+    }
+
+    public Integer getCount() {
+        return count;
+    }
+
+    public Color getColor() {
+        return color;
+    }
+
     @Override
     public String toString() {
         return "ProductInBasket{" +
