@@ -12,10 +12,12 @@ public abstract class Content {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 
-    @Column
+    @Column(unique = true)
+    @Transient
     private String name;
 
-    @Column
+    @Column(unique = true)
+    @Transient
     private String persianName;
 
     protected Content() {

@@ -8,7 +8,7 @@ import java.util.List;
 public class Category extends Content {
 
     @Column
-    @OneToMany(cascade=CascadeType.PERSIST)
+    @OneToMany(cascade=CascadeType.ALL)
     private List<Content> contents;
 
     public Category(String name, String persianName, List<Content> contents) {

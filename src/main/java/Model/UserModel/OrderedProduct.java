@@ -14,7 +14,7 @@ public class OrderedProduct extends Product {
     private Integer count;
 
     @JoinColumn
-    @ManyToOne(cascade=CascadeType.PERSIST)
+    @ManyToOne(cascade=CascadeType.ALL)
     private Color color;
 
     @Column

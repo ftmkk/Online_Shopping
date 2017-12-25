@@ -1,11 +1,10 @@
 package Model.ProductModel;
 
 
-import org.hibernate.annotations.Cascade;
-
 import javax.persistence.*;
 
 @Entity
+
 public class Brand {
 
     @Id
@@ -13,10 +12,12 @@ public class Brand {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 
-    @Column
+    @Column(unique = true)
+    @Transient
     private String name;
 
-    @Column
+    @Column(unique = true)
+    @Transient
     private String persianName;
 
     public Brand(String name, String persianName) {

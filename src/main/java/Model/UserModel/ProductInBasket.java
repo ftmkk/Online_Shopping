@@ -14,14 +14,14 @@ public class ProductInBasket {
     private Integer id;
 
     @JoinColumn
-    @ManyToOne(cascade=CascadeType.PERSIST)
+    @ManyToOne(cascade=CascadeType.ALL)
     private Product product;
 
     @Column
     private Integer count;
 
     @JoinColumn
-    @ManyToOne(cascade=CascadeType.PERSIST)
+    @ManyToOne(cascade=CascadeType.ALL)
     private Color color;
 
     public ProductInBasket(Product product, Integer count, Color color) {

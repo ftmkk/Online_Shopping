@@ -18,7 +18,7 @@ public class Main {
         attrL.add(new Attribute("screen size","1.2 inch",attrG,null));
 
         List<Color> colors = new ArrayList<>();
-        colors.add(new Color(1, "White", 0,0,0));
+        colors.add(new Color("White","White", 0,0,0));
 
 
 
@@ -36,7 +36,7 @@ public class Main {
                 new Brand("Samsung","SAMSUNG"),
                 attrL,
                 colors,
-                new Guaranty(1,"12 months MICROTELL"),
+                new Guaranty("12 months MICROTELL"),
                 3000L);
 
         p1.save();

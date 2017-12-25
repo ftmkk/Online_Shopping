@@ -10,8 +10,11 @@ public class Color {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 
-    @Column
+    @Column(unique = true)
     private String name;
+
+    @Column(unique = true)
+    private String persianName;
 
     @Column
     private Integer r;
@@ -22,9 +25,9 @@ public class Color {
     @Column
     private Integer b;
 
-    public Color(Integer id, String name, Integer r, Integer g, Integer b) {
-        this.id = id;
+    public Color(String name, String persianName, Integer r, Integer g, Integer b) {
         this.name = name;
+        this.persianName = persianName;
         this.r = r;
         this.g = g;
         this.b = b;

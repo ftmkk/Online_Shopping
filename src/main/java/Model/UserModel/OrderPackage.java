@@ -5,11 +5,11 @@ import java.util.Date;
 import java.util.List;
 
 @Entity
-public class Order{
+public class OrderPackage{
     @Id
     @Column
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private String id;
+    private Integer id;
 
     @Column
     private Date time;
@@ -18,7 +18,7 @@ public class Order{
     private Long amount;
 
     @Column
-    @OneToMany(cascade=CascadeType.PERSIST)
+    @OneToMany(cascade=CascadeType.ALL)
     private List<OrderedProduct> productList;
 
     @Column
@@ -29,14 +29,14 @@ public class Order{
     private Long transmissionCost;
 
     @JoinColumn
-    @ManyToOne(cascade=CascadeType.PERSIST)
+    @ManyToOne(cascade=CascadeType.ALL)
     private Address destination;
 
 
-    public Order() {
+    public OrderPackage() {
     }
 
-    public Order(Date time, Long amount, List<OrderedProduct> productList, OrderStatus status, Long transmissionCost, Address destination) {
+    public OrderPackage(Date time, Long amount, List<OrderedProduct> productList, OrderStatus status, Long transmissionCost, Address destination) {
         this.time = time;
         this.amount = amount;
         this.productList = productList;

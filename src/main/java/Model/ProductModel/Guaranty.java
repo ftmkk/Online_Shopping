@@ -10,11 +10,11 @@ public class Guaranty {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 
-    @Column
+    @Column(unique = true)
+    @Transient
     private String name;
 
-    public Guaranty(Integer id, String name) {
-        this.id = id;
+    public Guaranty(String name) {
         this.name = name;
     }
 

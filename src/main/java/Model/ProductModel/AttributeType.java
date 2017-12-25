@@ -15,11 +15,11 @@ public class AttributeType {
     private String title;
 
     @JoinColumn
-    @ManyToOne(cascade=CascadeType.PERSIST)
+    @ManyToOne(cascade=CascadeType.ALL)
     private AttributeType nextAttribute;
 
     @JoinColumn
-    @ManyToOne(cascade=CascadeType.PERSIST)
+    @ManyToOne(cascade=CascadeType.ALL)
     private AttributeGroup attributeGroup;
 
 

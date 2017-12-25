@@ -37,22 +37,22 @@ public class User {
     private Date birthDate;
 
     @Column
-    @OneToMany(cascade=CascadeType.PERSIST)
-    private List<Order> orderList;
+    @OneToMany(cascade=CascadeType.ALL)
+    private List<OrderPackage> orderList;
 
     @Column
-    @OneToMany(cascade=CascadeType.PERSIST)
+    @OneToMany(cascade=CascadeType.ALL)
     private List<Product> wishList;
 
     @Column
-    @OneToMany(cascade=CascadeType.PERSIST)
+    @OneToMany(cascade=CascadeType.ALL)
     private List<ProductInBasket> basketList;
 
     @Column
-    @OneToMany(cascade=CascadeType.PERSIST)
+    @OneToMany(cascade=CascadeType.ALL)
     private List<Address> addresses;
 
-    public User(String name, String phoneNumber, String mobileNumber, String email, Gender gender, String residenceAddress, Date birthDate, List<Order> orderList, List<Product> wishList, List<ProductInBasket> basketList, List<Address> addresses) {
+    public User(String name, String phoneNumber, String mobileNumber, String email, Gender gender, String residenceAddress, Date birthDate, List<OrderPackage> orderList, List<Product> wishList, List<ProductInBasket> basketList, List<Address> addresses) {
         this.name = name;
         this.phoneNumber = phoneNumber;
         this.mobileNumber = mobileNumber;

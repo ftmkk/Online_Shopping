@@ -2,6 +2,7 @@ package Model.ProductModel;
 
 import Model.Hibernate;
 import org.hibernate.Session;
+import org.hibernate.Transaction;
 
 import javax.persistence.*;
 import java.util.*;
@@ -36,19 +37,19 @@ public class Product extends Content {
     private String review;
 
     @JoinColumn
-    @ManyToOne(cascade=CascadeType.PERSIST)
+    @ManyToOne(cascade=CascadeType.ALL)
     private Brand brand;
 
     @Column
-    @OneToMany(cascade=CascadeType.PERSIST)
+    @OneToMany(cascade=CascadeType.ALL)
     private List<Attribute> attributes;
 
     @Column
-    @OneToMany(cascade=CascadeType.PERSIST)
+    @OneToMany(cascade=CascadeType.ALL)
     private List<Color> colors;
 
     @JoinColumn
-    @ManyToOne(cascade=CascadeType.PERSIST)
+    @ManyToOne(cascade=CascadeType.ALL)
     private Guaranty guaranty;
 
     @Column
@@ -140,7 +141,18 @@ public class Product extends Content {
 
     public void save(){
         Session session = Hibernate.getSessionFactory().openSession();
-        session.save(this);
-        session.close();
+        Transaction tx = null;
+        try {
+            tx = session.beginTransaction();
+            session.saveOrUpdate(this);
+            tx.commit();
+        }
+        catch (Exception e) {
+            if (tx!=null) tx.rollback();
+            throw e;
+        }
+        finally {
+            session.close();
+        }
     }
 }
