@@ -111,7 +111,7 @@ public class IUserControllerTest extends TestCase {
         }
     }
 
-    public void testOrderFromUser() {
+    public void test_orderFromUser() {
         List<Attribute> attrL1 = new ArrayList<>();
         List<Attribute> attrL2 = new ArrayList<>();
         AttributeGroup attrG = new AttributeGroup("CATEGORY_1","kategory");

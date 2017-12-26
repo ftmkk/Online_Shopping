@@ -75,7 +75,7 @@ public class IProductControllerTest extends TestCase {
         assertEquals(pr1_byName.getId(),p1.getId());
     }
 
-    public void testGetProducts() {
+    public void test_getProducts() {
 
         List<Attribute> attrL1 = new ArrayList<>();
         List<Attribute> attrL2 = new ArrayList<>();

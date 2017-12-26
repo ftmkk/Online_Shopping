@@ -8,6 +8,7 @@ import java.util.List;
 
 public class ICategoryControllerTest extends TestCase {
 
+
     public void test_addCategory_getCategoryByName() {
 
         ICategoryController cr = new CategoryController();
@@ -25,6 +26,8 @@ public class ICategoryControllerTest extends TestCase {
 
         Category categoryA = new Category("a","a");
         cr.addCategory(categoryA);
+
+
         List<Attribute> attrL1 = new ArrayList<>();
         List<Color> colors1 = new ArrayList<>();
         Product p1 = new Product(
