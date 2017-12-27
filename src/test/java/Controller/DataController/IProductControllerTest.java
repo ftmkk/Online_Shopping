@@ -18,16 +18,16 @@ public class IProductControllerTest extends TestCase {
 
 
         Product p1 = new Product(
-                "p1",
-                "P1",
+                "p111",
+                "P11",
                 10000000L,
                 ProductStatus.AVAILABLE,
                 3,
-                "THis is product p1!",
+                "THis is product p11!",
                 91992,
                 93,
                 null,
-                "THis is review of product p1!",
+                "THis is review of product p11!",
                 new Brand("Samsung","SAMSUNG"),
                 attrL1,
                 colors1,

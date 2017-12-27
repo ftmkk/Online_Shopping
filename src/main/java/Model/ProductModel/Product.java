@@ -1,5 +1,6 @@
 package Model.ProductModel;
 
+import Model.Elasticsearch;
 import Model.Hibernate;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -216,6 +217,10 @@ public class Product extends Content {
         return (List<Product>)(Object) Hibernate.getAll(Product.class);
     }
 
+
+    public void addToElastic(){
+        Elasticsearch.add(this);
+    }
 
     @Override
     public String toString() {

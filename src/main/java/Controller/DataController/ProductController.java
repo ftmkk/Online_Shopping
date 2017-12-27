@@ -13,6 +13,7 @@ public class ProductController implements IProductController {
         //SET BRAND
         product.getBrand().addIfNotExistName();
 
+
         //SET ATTRIBUTES
         for(Attribute attribute : product.getAttributes()){
             attribute.getAttributeGroup().addIfNotExistName();
@@ -28,7 +29,12 @@ public class ProductController implements IProductController {
 
 
         //SET PRODUCT
-        return product.addIfNotExistName();
+        boolean added = product.addIfNotExistName();
+        product.addToElastic();
+        if(added){
+
+        }
+        return added;
     }
 
     public Product getProductById(Integer id){
