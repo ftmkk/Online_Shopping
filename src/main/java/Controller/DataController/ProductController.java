@@ -29,12 +29,12 @@ public class ProductController implements IProductController {
 
 
         //SET PRODUCT
-        boolean added = product.addIfNotExistName();
-        product.addToElastic();
-        if(added){
+        return product.addIfNotExistName();
+        //product.addToElastic();
+        //if(added){
 
-        }
-        return added;
+       // }
+        //return added;
     }
 
     public Product getProductById(Integer id){
