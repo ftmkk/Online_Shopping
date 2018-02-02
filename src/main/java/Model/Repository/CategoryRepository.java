@@ -5,6 +5,8 @@ import Model.Entities.Categorization.Category;
 import Model.Entities.Categorization.Content;
 import Model.Entities.ProductInfo.Product;
 
+import java.util.List;
+
 public class CategoryRepository {
 
     public static boolean addIfNotExistName(Category category){
@@ -49,4 +51,16 @@ public class CategoryRepository {
         Hibernate.update(category);
         return false;
     }
+
+    public static Category getCategoryByContent(Content content){
+        for(Object obj : Hibernate.getAll(Category.class)){
+            Category category = (Category) obj;
+            if(category.hasContent(content)) {
+                return category;
+            }
+        }
+        return null;
+    }
+
+
 }
