@@ -1,8 +1,7 @@
 package Model.ProductModel;
 
 import Model.Hibernate;
-import org.hibernate.Session;
-import org.hibernate.Transaction;
+import Model.FeedBack.feedbackManagment;
 import org.hibernate.annotations.LazyCollection;
 import org.hibernate.annotations.LazyCollectionOption;
 
@@ -58,6 +57,12 @@ public class Product extends Content {
     @LazyCollection(LazyCollectionOption.FALSE)
     private Guaranty guaranty;
 
+    @JoinColumn
+    @OneToMany(cascade=CascadeType.ALL)
+    @LazyCollection(LazyCollectionOption.FALSE)
+    private Model.FeedBack.feedbackManagment feedbackManagment;
+
+
     @Column
     private Long discount;
 
@@ -65,7 +70,7 @@ public class Product extends Content {
     }
 
 
-    public Product(String name, String persianName, Long price, ProductStatus status, Integer remainingCount, String briefDescription, Integer visitCount, Integer sellCount, Date releaseDate, String review, Brand brand, List<Attribute> attributes, List<Color> colors, Guaranty guaranty, Long discount) {
+    public Product(String name, String persianName, Long price, ProductStatus status, Integer remainingCount, String briefDescription, Integer visitCount, Integer sellCount, Date releaseDate, String review, Brand brand, List<Attribute> attributes, List<Color> colors, Guaranty guaranty, Long discount,feedbackManagment feedbackManagment) {
         super(name, persianName);
         this.price = price;
         this.status = status;
@@ -80,6 +85,7 @@ public class Product extends Content {
         this.colors = colors;
         this.guaranty = guaranty;
         this.discount = discount;
+        this.feedbackManagment = feedbackManagment;
     }
 
     public List<Product> getProducts(){

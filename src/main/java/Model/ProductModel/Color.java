@@ -43,6 +43,46 @@ public class Color implements Serializable {
         return name;
     }
 
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public Integer getB() {
+        return b;
+    }
+
+    public void setB(Integer b) {
+        this.b = b;
+    }
+
+    public Integer getG() {
+        return g;
+    }
+
+    public void setG(Integer g) {
+        this.g = g;
+    }
+
+    public Integer getR() {
+        return r;
+    }
+
+    public void setR(Integer r) {
+        this.r = r;
+    }
+
+    public String getPersianName() {
+        return persianName;
+    }
+
+    public void setPersianName(String persianName) {
+        this.persianName = persianName;
+    }
+
     public boolean equals(Color color){
         return color.getName().equals(this.getName());
 
