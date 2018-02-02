@@ -3,7 +3,7 @@ package Model.ProductModel.ProductInfo;
 import Model.DatabaseOperations.Hibernate;
 import Model.ProductModel.Categorization.Content;
 import Model.DatabaseOperations.Elasticsearch;
-import Model.ProductModel.FeedBack.FeedbackManagement;
+import Model.ProductModel.Feedback.FeedbackManagement;
 import org.hibernate.annotations.LazyCollection;
 import org.hibernate.annotations.LazyCollectionOption;
 
@@ -200,28 +200,6 @@ public class Product extends Content {
 
     public void setDiscount(Long discount) {
         this.discount = discount;
-    }
-
-    public boolean addIfNotExistName(){
-        String key = "name";
-        String value = this.getName();
-        boolean result = Hibernate.addIfNotExist(this,key,value);
-        Product g = (Product) Hibernate.getByKey(this.getClass(),key,value);
-        this.setId(g.getId());
-        return result;
-    }
-
-    public static Product getById(Integer id){
-        return (Product) Hibernate.getById(Product.class,id);
-    }
-
-    public static Product getByName(String name) {
-        return (Product) Hibernate.getByKey(Product.class,"name",name);
-    }
-
-
-    public static List<Product> getAll(){
-        return (List<Product>)(Object) Hibernate.getAll(Product.class);
     }
 
 

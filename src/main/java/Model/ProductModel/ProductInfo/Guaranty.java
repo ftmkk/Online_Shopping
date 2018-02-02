@@ -38,18 +38,9 @@ public class Guaranty {
         this.name = name;
     }
 
-    public boolean addIfNotExistName(){
-        String key = "name";
-        String value = this.getName();
-        boolean result = Hibernate.addIfNotExist(this,key,value);
-        Guaranty g = (Guaranty) Hibernate.getByKey(this.getClass(),key,value);
-        this.setId(g.getId());
-        return result;
-    }
-
     @Override
     public String toString() {
-        return "Guaranty{" +
+        return "GuarantyRepository{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 '}';

@@ -22,10 +22,6 @@ public class Attribute extends AttributeType{
         this.value = value;
     }
 
-    public void add(){
-        Hibernate.add(this);
-    }
-
     @Override
     public String toString() {
         return "Attribute{" +

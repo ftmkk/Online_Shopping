@@ -1,8 +1,10 @@
 package Controller.DataController;
 
 import Model.ProductModel.ProductInfo.Attribute;
+import Model.ProductModel.ProductInfo.AttributeGroup;
 import Model.ProductModel.ProductInfo.Color;
 import Model.ProductModel.ProductInfo.Product;
+import Model.Repository.*;
 
 import java.util.List;
 
@@ -11,25 +13,25 @@ public class ProductController implements IProductController {
     public boolean addProduct(Product product){
 
         //SET BRAND
-        product.getBrand().addIfNotExistName();
+        BrandRepository.addIfNotExistName(product.getBrand());
 
 
         //SET ATTRIBUTES
         for(Attribute attribute : product.getAttributes()){
-            attribute.getAttributeGroup().addIfNotExistName();
+            AttributeGroupRepository.addIfNotExistName(attribute.getAttributeGroup());
         }
 
         //SET COLORS
         for(Color color : product.getColors()){
-            color.addIfNotExistName();
+            ColorRepository.addIfNotExistName(color);
         }
 
         //SET GUARANTY
-        product.getGuaranty().addIfNotExistName();
+        GuarantyRepository.addIfNotExistName(product.getGuaranty());
 
 
         //SET PRODUCT
-        return product.addIfNotExistName();
+        return ProductRepository.addIfNotExistName(product);
         //product.addToElastic();
         //if(added){
 
@@ -38,14 +40,14 @@ public class ProductController implements IProductController {
     }
 
     public Product getProductById(Integer id){
-        return Product.getById(id);
+        return ProductRepository.getById(id);
     }
 
     public Product getProductByName(String name) {
-        return Product.getByName(name);
+        return ProductRepository.getByName(name);
     }
 
     public List<Product> getProducts() {
-        return Product.getAll();
+        return ProductRepository.getAll();
     }
 }

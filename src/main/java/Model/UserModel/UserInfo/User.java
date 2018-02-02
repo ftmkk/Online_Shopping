@@ -118,21 +118,6 @@ public class User {
         this.basketList = basketList;
     }
 
-
-    public boolean addIfNotExistUsername(){
-        String key = "username";
-        String value = this.getUsername();
-        boolean result = Hibernate.addIfNotExist(this,key,value);
-        User u = (User) Hibernate.getByKey(this.getClass(),key,value);
-        this.setId(u.getId());
-        return result;
-    }
-
-
-    public static User getByUsername(String username){
-        return (User) Hibernate.getByKey(User.class, "username",username);
-    }
-
     public boolean hasProductInWishList(Product product){
         for(Product productInWishList : this.getWishList()){
             if(productInWishList.getName().equals(product.getName())){
@@ -151,35 +136,6 @@ public class User {
         return false;
     }
 
-    public boolean addProductToWishListIfNotExist(Product product){
-        if(!hasProductInWishList(product)){
-            this.getWishList().add(product);
-            Hibernate.update(this);
-            return true;
-        }
-        Hibernate.update(this);
-        return false;
-    }
-
-    public boolean addProductInBasketIfNotExist(ProductInBasket productInBasket){
-        if(!hasProductInBasket(productInBasket)){
-            this.getBasketList().add(productInBasket);
-            Hibernate.update(this);
-            return true;
-        }
-        Hibernate.update(this);
-        return false;
-    }
-
-    public void clearBasket(){
-        this.setBasketList(new ArrayList<>());
-        Hibernate.update(this);
-    }
-
-    public void addOrderPackage(OrderPackage orderPackage){
-        this.getOrderList().add(orderPackage);
-        Hibernate.update(this);
-    }
 
 
     @Override

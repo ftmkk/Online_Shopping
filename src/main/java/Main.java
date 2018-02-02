@@ -47,7 +47,7 @@ public class Main {
 //                new Brand("Samsung","SAMSUNG"),
 //                attrL1,
 //                colors1,
-//                new Guaranty("12 months MICROTELL"),
+//                new GuarantyRepository("12 months MICROTELL"),
 //                3000L);
 //
 //        Product p2 = new Product(
@@ -64,7 +64,7 @@ public class Main {
 //                new Brand("Sony","soni"),
 //                attrL2,
 //                colors2,
-//                new Guaranty("2 months MICROTELL"),
+//                new GuarantyRepository("2 months MICROTELL"),
 //                3000L);
 //
 //
@@ -82,7 +82,7 @@ public class Main {
 //                new Brand("Apple","appel"),
 //                attrL3,
 //                colors3,
-//                new Guaranty("6 months MICROTELL"),
+//                new GuarantyRepository("6 months MICROTELL"),
 //                3000L);
 //
 //

@@ -2,7 +2,7 @@ package Controller.DataController;
 
 import Model.ProductModel.Categorization.Category;
 import Model.ProductModel.Categorization.Content;
-import Model.ProductModel.FeedBack.FeedbackManagement;
+import Model.ProductModel.Feedback.FeedbackManagement;
 import Model.ProductModel.ProductInfo.*;
 import junit.framework.TestCase;
 

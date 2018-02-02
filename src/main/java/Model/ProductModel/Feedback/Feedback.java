@@ -1,4 +1,4 @@
-package Model.ProductModel.FeedBack;
+package Model.ProductModel.Feedback;
 
 import Model.UserModel.UserInfo.User;
 import org.hibernate.annotations.LazyCollection;

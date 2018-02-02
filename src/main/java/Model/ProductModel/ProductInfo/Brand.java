@@ -57,15 +57,6 @@ public class Brand {
     }
 
 
-    public boolean addIfNotExistName(){
-        String key = "name";
-        String value = this.getName();
-        boolean result = Hibernate.addIfNotExist(this,key,value);
-        Brand b = (Brand) Hibernate.getByKey(this.getClass(),key,value);
-        this.setId(b.getId());
-        return result;
-    }
-
     public void flush(){
 
     }

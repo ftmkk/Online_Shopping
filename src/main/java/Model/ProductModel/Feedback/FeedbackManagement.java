@@ -1,4 +1,4 @@
-package Model.ProductModel.FeedBack;
+package Model.ProductModel.Feedback;
 
 import org.hibernate.annotations.LazyCollection;
 import org.hibernate.annotations.LazyCollectionOption;

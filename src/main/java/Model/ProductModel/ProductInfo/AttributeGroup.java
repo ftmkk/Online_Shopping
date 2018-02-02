@@ -42,15 +42,6 @@ public class AttributeGroup {
     public AttributeGroup() {
     }
 
-    public boolean addIfNotExistName(){
-        String key = "name";
-        String value = this.getName();
-        boolean result = Hibernate.addIfNotExist(this,key,value);
-        AttributeGroup g = (AttributeGroup) Hibernate.getByKey(this.getClass(),key,value);
-        this.setId(g.getId());
-        return result;
-    }
-
     @Override
     public String toString() {
         return "AttributeGroup{" +

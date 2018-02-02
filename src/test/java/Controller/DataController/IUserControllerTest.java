@@ -1,10 +1,9 @@
 package Controller.DataController;
 
-import Model.ProductModel.FeedBack.FeedbackManagement;
+import Model.ProductModel.Feedback.FeedbackManagement;
 import Model.ProductModel.ProductInfo.*;
 import Model.UserModel.Order.*;
 import Model.UserModel.UserInfo.Address;
-import Model.UserModel.UserInfo.Gender;
 import Model.UserModel.UserInfo.Profile;
 import Model.UserModel.UserInfo.User;
 import junit.framework.TestCase;
@@ -27,7 +26,7 @@ public class IUserControllerTest extends TestCase {
         );
 
         ur.addUser(user);
-        User userExpected = User.getByUsername(user.getUsername());
+        User userExpected = ur.getUserByUsername(user.getUsername());
         assertEquals(user.getId(),userExpected.getId());
 
     }

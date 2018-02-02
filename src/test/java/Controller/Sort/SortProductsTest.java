@@ -2,7 +2,7 @@ package Controller.Sort;
 
 import Controller.DataController.IProductController;
 import Controller.DataController.ProductController;
-import Model.ProductModel.FeedBack.FeedbackManagement;
+import Model.ProductModel.Feedback.FeedbackManagement;
 import Model.ProductModel.ProductInfo.*;
 import junit.framework.TestCase;
 

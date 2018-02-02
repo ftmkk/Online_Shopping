@@ -119,8 +119,4 @@ public class Profile {
         this.addressList = addressList;
     }
 
-    public void addAddress(Address address){
-        this.getAddressList().add(address);
-        Hibernate.update(this);
-    }
 }

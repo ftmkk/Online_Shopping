@@ -34,19 +34,6 @@ public class Category extends Content {
         return false;
     }
 
-    public boolean addContentIfNotExist(Content content){
-        if(!hasContent(content)){
-            this.getContents().add(content);
-            Hibernate.update(this);
-            return true;
-        }
-        Hibernate.update(this);
-        return false;
-    }
-
-    public static Category getByName(String name) {
-        return (Category) Hibernate.getByKey(Category.class,"name",name);
-    }
 
     public List<Content> getContents() {
         return contents;
@@ -63,15 +50,6 @@ public class Category extends Content {
         return products;
     }
 
-
-    public boolean addIfNotExistName(){
-        String key = "name";
-        String value = this.getName();
-        boolean result = Hibernate.addIfNotExist(this,key,value);
-        Category g = (Category) Hibernate.getByKey(this.getClass(),key,value);
-        this.setId(g.getId());
-        return result;
-    }
 
     @Override
     public String toString() {

@@ -1,6 +1,8 @@
 package Controller.DataController;
 
 import Model.ProductModel.ProductInfo.Product;
+import Model.Repository.ProfileRepository;
+import Model.Repository.UserRepository;
 import Model.UserModel.UserInfo.Address;
 import Model.UserModel.UserInfo.User;
 import Model.UserModel.Order.*;
@@ -11,25 +13,25 @@ import java.util.List;
 public class UserController implements IUserController {
     @Override
     public boolean addUser(User user) {
-        return user.addIfNotExistUsername();
+        return UserRepository.addIfNotExistUsername(user);
     }
 
     @Override
     public User getUserByUsername(String username) {
-        return User.getByUsername(username);
+        return UserRepository.getByUsername(username);
     }
 
     @Override
     public boolean addToBasketOfUser(User user, ProductInBasket productInBasket) {
         if(productInBasket.getProduct().getRemainingCount() >= productInBasket.getCount()){
-            return user.addProductInBasketIfNotExist(productInBasket);
+            return UserRepository.addProductInBasketIfNotExist(user, productInBasket);
         }
         return false;
     }
 
     @Override
     public boolean addToWishListOfUser(User user, Product product) {
-        return user.addProductToWishListIfNotExist(product);
+        return UserRepository.addProductToWishListIfNotExist(user, product);
     }
 
     @Override
@@ -58,9 +60,9 @@ public class UserController implements IUserController {
                 0L,destination
         );
 
-        user.clearBasket();
-        user.getProfile().addAddress(destination);
-        user.addOrderPackage(orderPackage);
+        UserRepository.clearBasket(user);
+        ProfileRepository.addAddress(user.getProfile(), destination);
+        UserRepository.addOrderPackage(user, orderPackage);
 
     }
 }

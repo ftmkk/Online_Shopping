@@ -88,11 +88,7 @@ public class Color implements Serializable {
 
     }
 
-    public boolean addIfNotExistName(){
-        String key = "name";
-        String value = this.getName();
-        return Hibernate.addIfNotExist(this,key,value);
-    }
+
     @Override
     public String toString() {
         return "Color{" +
