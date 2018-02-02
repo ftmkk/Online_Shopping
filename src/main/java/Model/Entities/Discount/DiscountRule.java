@@ -21,17 +21,20 @@ public class DiscountRule {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 
-    @Column
-    private String discount_type;
+    @Column(unique = true)
+    private String name;
 
     @Column
-    private int discount_value;
+    private String type;
 
     @Column
-    private Date discount_startDate;
+    private int value;
 
     @Column
-    private Date discount_endDate;
+    private Date startDate;
+
+    @Column
+    private Date endDate;
 
     @Column
     private boolean active;
@@ -44,36 +47,52 @@ public class DiscountRule {
     public DiscountRule() {
     }
 
-    public String getDiscount_type() {
-        return discount_type;
+    public Integer getId() {
+        return id;
     }
 
-    public void setDiscount_type(String discount_type) {
-        this.discount_type = discount_type;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
-    public int getDiscount_value() {
-        return discount_value;
+    public String getName() {
+        return name;
     }
 
-    public void setDiscount_value(int discount_value) {
-        this.discount_value = discount_value;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public Date getDiscount_startDate() {
-        return discount_startDate;
+    public String getType() {
+        return type;
     }
 
-    public void setDiscount_startDate(Date discount_startDate) {
-        this.discount_startDate = discount_startDate;
+    public void setType(String discount_type) {
+        this.type = discount_type;
     }
 
-    public Date getDiscount_endDate() {
-        return discount_endDate;
+    public int getValue() {
+        return value;
     }
 
-    public void setDiscount_endDate(Date discount_endDate) {
-        this.discount_endDate = discount_endDate;
+    public void setValue(int discount_value) {
+        this.value = discount_value;
+    }
+
+    public Date getStartDate() {
+        return startDate;
+    }
+
+    public void setStartDate(Date discount_startDate) {
+        this.startDate = discount_startDate;
+    }
+
+    public Date getEndDate() {
+        return endDate;
+    }
+
+    public void setEndDate(Date discount_endDate) {
+        this.endDate = discount_endDate;
     }
 
     public boolean isActive() {
@@ -92,18 +111,18 @@ public class DiscountRule {
         this.products = products;
     }
 
-    public DiscountRule(String discount_type, int discount_value, Date discount_startDate, Date discount_endDate, boolean active, List<Product> products) {
-        this.discount_type = discount_type;
-        this.discount_value = discount_value;
-        this.discount_startDate = discount_startDate;
-        this.discount_endDate = discount_endDate;
+    public DiscountRule(String type, int value, Date startDate, Date endDate, boolean active, List<Product> products) {
+        this.type = type;
+        this.value = value;
+        this.startDate = startDate;
+        this.endDate = endDate;
         this.active = active;
         this.products = products;
     }
 
     public void updateDiscount(int newValue){
 
-        this.discount_value = newValue;
+        this.value = newValue;
     }
 
 
@@ -111,34 +130,24 @@ public class DiscountRule {
         this.active = false;
     }
 
-    public void addDiscount(){
-        try {
-            Hibernate.add(this);
-        }catch (Exception e){
-            System.out.print(e.toString());
-        }
 
-        for(Product p : products){
-            p.setPrice(p.getPrice()*(100-this.discount_value)*100);
+    public boolean hasProductInProductList(Product product){
+        for(Product productInList : this.getProducts()){
+            if(productInList.getName().equals(product.getName())){
+                return true;
+            }
         }
-    }
-
-    public void removeDiscount(){
-        try {
-            Hibernate.delete(this);
-        }catch (Exception e){
-            System.out.print(e.toString());
-        }
+        return false;
     }
 
 
     @Override
     public String toString() {
         return "DiscountRule{" +
-                "discount_type='" + discount_type + '\'' +
-                ", discount_value='" + discount_value + '\'' +
-                ", discount_startDate=" + discount_startDate +
-                ", discount_endDate=" + discount_endDate +
+                "discount_type='" + type + '\'' +
+                ", discount_value='" + value + '\'' +
+                ", discount_startDate=" + startDate +
+                ", discount_endDate=" + endDate +
                 ", active=" + active +
                 ", products=" + products +
                 '}';

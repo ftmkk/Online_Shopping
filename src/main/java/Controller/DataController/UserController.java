@@ -32,7 +32,7 @@ public class UserController implements IUserController {
 
     @Override
     public boolean removeFromBasketOfUser(User user, ProductInBasket productInBasket) {
-        return UserRepository.removeProductFromBasketIfNotExist(user, productInBasket);
+        return UserRepository.removeProductFromBasketIfExist(user, productInBasket);
     }
 
     @Override
@@ -42,7 +42,7 @@ public class UserController implements IUserController {
 
     @Override
     public boolean removeFromWishListOfUser(User user, Product product) {
-        return UserRepository.removeProductFromWishListIfNotExist(user, product);
+        return UserRepository.removeProductFromWishListIfExist(user, product);
     }
 
     @Override

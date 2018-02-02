@@ -5,6 +5,8 @@ import Model.Entities.Feedback.Comment;
 import Model.Entities.Feedback.FeedbackCollection;
 import Model.Entities.Feedback.Question;
 import Model.Entities.Feedback.Score;
+import Model.Entities.Order.ProductInBasket;
+import Model.Entities.UserInfo.User;
 
 public class FeedbackCollectionRepository {
 

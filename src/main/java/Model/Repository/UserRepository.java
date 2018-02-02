@@ -55,7 +55,7 @@ public class UserRepository {
         return (User) Hibernate.getByKey(User.class, "username",username);
     }
 
-    public static boolean removeProductFromBasketIfNotExist(User user, ProductInBasket productInBasket) {
+    public static boolean removeProductFromBasketIfExist(User user, ProductInBasket productInBasket) {
         if(user.hasProductInBasket(productInBasket)){
             user.getBasketList().remove(productInBasket);
             Hibernate.update(user);
@@ -65,7 +65,7 @@ public class UserRepository {
         return false;
     }
 
-    public static boolean removeProductFromWishListIfNotExist(User user, Product product) {
+    public static boolean removeProductFromWishListIfExist(User user, Product product) {
         if(user.hasProductInWishList(product)){
             user.getWishList().remove(product);
             Hibernate.update(user);

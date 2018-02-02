@@ -14,4 +14,20 @@ public interface IFeedbackController {
     void addQuestionToProduct(Product product, Question question);
 
     void addAnswerToQuestionInProduct(Question question, Answer answer);
+
+    boolean removeComment(Comment comment);
+
+    boolean removeScore(Score score);
+
+    boolean removeQuestion(Question question);
+
+    boolean removeAnswer(Answer answer);
+
+    boolean modifyComment(Comment comment);
+
+    boolean modifyScore(Score score);
+
+    boolean modifyQuestion(Question question);
+
+    boolean modifyAnswer(Answer answer);
 }

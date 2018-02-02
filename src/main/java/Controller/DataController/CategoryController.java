@@ -3,7 +3,6 @@ package Controller.DataController;
 import Model.Entities.Categorization.Category;
 import Model.Entities.ProductInfo.Product;
 import Model.Repository.CategoryRepository;
-import Model.Repository.ProductRepository;
 
 public class CategoryController implements ICategoryController {
 
@@ -44,6 +43,5 @@ public class CategoryController implements ICategoryController {
         CategoryRepository.removeContentIfExist(superCategory, subCategory);
 
     }
-
-
+    
 }

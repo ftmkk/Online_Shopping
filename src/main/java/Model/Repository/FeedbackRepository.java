@@ -5,17 +5,7 @@ import Model.Entities.Feedback.Feedback;
 
 public class FeedbackRepository {
 
-    public boolean add(Feedback feedback){
-        try {
-            Hibernate.add(feedback);
-            return true;
-        }catch (Exception e){
-            System.out.print(e.toString());
-            return false;
-        }
-    }
-
-    public boolean remove(Feedback feedback){
+    public static boolean remove(Feedback feedback){
         try {
             Hibernate.delete(feedback);
             return true;
@@ -25,7 +15,7 @@ public class FeedbackRepository {
         }
     }
 
-    public boolean modify(Feedback feedback){
+    public static boolean modify(Feedback feedback){
         try {
             Hibernate.update(feedback);
             return true;
