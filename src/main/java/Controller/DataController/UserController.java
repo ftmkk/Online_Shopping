@@ -1,9 +1,10 @@
 package Controller.DataController;
 
+import Model.ProductModel.ProductInfo.Product;
 import Model.ProductSpec.Product;
-import Model.UserInfo.Address;
-import Model.UserInfo.User;
-import Model.Order.*;
+import Model.UserModel.UserInfo.Address;
+import Model.UserModel.UserInfo.User;
+import Model.UserModel.Order.*;
 
 import java.util.ArrayList;
 import java.util.List;

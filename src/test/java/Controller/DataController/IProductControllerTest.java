@@ -1,6 +1,6 @@
 package Controller.DataController;
 
-import Model.ProductModel.*;
+import Model.ProductModel.ProductInfo.*;
 import junit.framework.TestCase;
 
 import java.util.ArrayList;

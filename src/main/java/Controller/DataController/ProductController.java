@@ -1,8 +1,8 @@
 package Controller.DataController;
 
-import Model.ProductModel.Attribute;
-import Model.ProductModel.Color;
-import Model.ProductModel.Product;
+import Model.ProductModel.ProductInfo.Attribute;
+import Model.ProductModel.ProductInfo.Color;
+import Model.ProductModel.ProductInfo.Product;
 
 import java.util.List;
 

@@ -20,20 +20,20 @@
         <!-- Drop and re-create the database schema on startup -->
         <property name="hbm2ddl.auto">update</property>
         <!-- Names the annotated entity class -->
-        <mapping class="Model.ProductModel.Attribute" />
-        <mapping class="Model.ProductModel.AttributeType" />
-        <mapping class="Model.ProductModel.AttributeGroup" />
-        <mapping class="Model.ProductModel.Brand" />
-        <mapping class="Model.ProductModel.Category" />
-        <mapping class="Model.ProductModel.Color" />
-        <mapping class="Model.ProductModel.Content" />
-        <mapping class="Model.ProductModel.Guaranty" />
-        <mapping class="Model.ProductModel.Product" />
-        <mapping class="Model.UserModel.Address" />
-        <mapping class="Model.UserModel.OrderPackage" />
-        <mapping class="Model.UserModel.OrderedProduct" />
-        <mapping class="Model.UserModel.User" />
-        <mapping class="Model.UserModel.ProductInBasket" />
+        <mapping class="Model.ProductModel.ProductInfo.Attribute" />
+        <mapping class="Model.ProductModel.ProductInfo.AttributeType" />
+        <mapping class="Model.ProductModel.ProductInfo.AttributeGroup" />
+        <mapping class="Model.ProductModel.ProductInfo.Brand" />
+        <mapping class="Model.ProductModel.Categorization.Category" />
+        <mapping class="Model.ProductModel.ProductInfo.Color" />
+        <mapping class="Model.ProductModel.Categorization.Content" />
+        <mapping class="Model.ProductModel.ProductInfo.Guaranty" />
+        <mapping class="Model.ProductModel.ProductInfo.Product" />
+        <mapping class="Model.UserModel.UserInfo.Address" />
+        <mapping class="Model.UserModel.Order.OrderPackage" />
+        <mapping class="Model.UserModel.Order.OrderedProduct" />
+        <mapping class="Model.UserModel.Order.User" />
+        <mapping class="Model.UserModel.Order.ProductInBasket" />
 
     </session-factory>
 </hibernate-configuration>

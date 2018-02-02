@@ -1,7 +1,8 @@
 package Controller.DataController;
 
-import Model.ProductModel.*;
-import Model.UserModel.*;
+import Model.ProductModel.ProductInfo.*;
+import Model.UserModel.Order.*;
+import Model.UserModel.UserInfo.Address;
 import junit.framework.TestCase;
 
 import java.util.ArrayList;

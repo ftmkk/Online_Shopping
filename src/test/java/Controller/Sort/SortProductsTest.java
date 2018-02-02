@@ -2,7 +2,7 @@ package Controller.Sort;
 
 import Controller.DataController.IProductController;
 import Controller.DataController.ProductController;
-import Model.ProductModel.*;
+import Model.ProductModel.ProductInfo.*;
 import junit.framework.TestCase;
 
 import java.util.ArrayList;

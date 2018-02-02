@@ -1,7 +1,7 @@
 package Controller.Filter;
 
-import Model.ProductModel.Color;
-import Model.ProductModel.Product;
+import Model.ProductModel.ProductInfo.Color;
+import Model.ProductModel.ProductInfo.Product;
 
 import java.util.ArrayList;
 import java.util.List;

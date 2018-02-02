@@ -1,9 +1,7 @@
 package Controller.Filter;
 
-import Model.Hibernate;
-import Model.ProductModel.Category;
-import Model.ProductModel.Content;
-import Model.ProductModel.Product;
+import Model.ProductModel.Categorization.Category;
+import Model.ProductModel.ProductInfo.Product;
 
 import java.util.List;
 

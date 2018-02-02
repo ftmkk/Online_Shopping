@@ -1,7 +1,8 @@
 package Controller.Filter;
 
 import Controller.DataController.*;
-import Model.ProductModel.*;
+import Model.ProductModel.Categorization.Category;
+import Model.ProductModel.ProductInfo.*;
 import junit.framework.TestCase;
 
 import java.util.ArrayList;

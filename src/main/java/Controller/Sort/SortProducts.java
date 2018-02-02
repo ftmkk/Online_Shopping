@@ -1,6 +1,6 @@
 package Controller.Sort;
 
-import Model.ProductModel.Product;
+import Model.ProductModel.ProductInfo.Product;
 
 import java.util.List;
 

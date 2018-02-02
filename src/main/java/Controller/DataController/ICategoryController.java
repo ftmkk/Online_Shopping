@@ -1,7 +1,7 @@
 package Controller.DataController;
 
-import Model.ProductModel.Category;
-import Model.ProductModel.Product;
+import Model.ProductModel.Categorization.Category;
+import Model.ProductModel.ProductInfo.Product;
 
 public interface ICategoryController {
 

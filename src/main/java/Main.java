@@ -4,12 +4,12 @@ import Controller.Filter.FilterProducts;
 import Controller.DataController.*;
 import Controller.Sort.SortByPrice;
 import Controller.Sort.SortProducts;
-import Model.Categorization.Category;
-import Model.ProductSpec.*;
-import Model.UserInfo.Address;
-import Model.UserInfo.Gender;
-import Model.Order.ProductInBasket;
-import Model.UserInfo.User;
+import Model.ProductModel.Categorization.Category;
+import Model.ProductModel.ProductInfo.*;
+import Model.UserModel.UserInfo.Address;
+import Model.UserModel.UserInfo.Gender;
+import Model.UserModel.Order.ProductInBasket;
+import Model.UserModel.UserInfo.User;
 
 import java.util.ArrayList;
 import java.util.List;
