@@ -1,18 +1,3 @@
-import Controller.Filter.FilterByBrand;
-import Controller.Filter.FilterByCategory;
-import Controller.Filter.FilterProducts;
-import Controller.DataController.*;
-import Controller.Sort.SortByPrice;
-import Controller.Sort.SortProducts;
-import Model.ProductModel.Categorization.Category;
-import Model.ProductModel.ProductInfo.*;
-import Model.UserModel.UserInfo.Address;
-import Model.UserModel.UserInfo.Gender;
-import Model.UserModel.Order.ProductInBasket;
-import Model.UserModel.UserInfo.User;
-
-import java.util.ArrayList;
-import java.util.List;
 import java.util.logging.Logger;
 
 public class Main {

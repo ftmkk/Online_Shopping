@@ -2,7 +2,7 @@ package Model.Repository;
 
 import Model.DatabaseOperations.Elasticsearch;
 import Model.DatabaseOperations.Hibernate;
-import Model.ProductModel.ProductInfo.Product;
+import Model.Entities.ProductInfo.Product;
 
 import java.net.UnknownHostException;
 import java.util.List;

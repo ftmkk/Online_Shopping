@@ -1,7 +1,7 @@
 package Controller.DataController;
 
-import Model.ProductModel.Categorization.Category;
-import Model.ProductModel.ProductInfo.Product;
+import Model.Entities.Categorization.Category;
+import Model.Entities.ProductInfo.Product;
 import Model.Repository.CategoryRepository;
 import Model.Repository.ProductRepository;
 

@@ -1,8 +1,8 @@
 package Model.Repository;
 
 import Model.DatabaseOperations.Hibernate;
-import Model.ProductModel.Categorization.Category;
-import Model.ProductModel.Categorization.Content;
+import Model.Entities.Categorization.Category;
+import Model.Entities.Categorization.Content;
 
 public class CategoryRepository {
 

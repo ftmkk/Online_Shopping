@@ -1,9 +1,9 @@
 package Controller.DataController;
 
-import Model.ProductModel.ProductInfo.Attribute;
-import Model.ProductModel.ProductInfo.AttributeGroup;
-import Model.ProductModel.ProductInfo.Color;
-import Model.ProductModel.ProductInfo.Product;
+import Model.Entities.ProductInfo.Attribute;
+import Model.Entities.ProductInfo.AttributeGroup;
+import Model.Entities.ProductInfo.Color;
+import Model.Entities.ProductInfo.Product;
 import Model.Repository.*;
 
 import java.util.List;

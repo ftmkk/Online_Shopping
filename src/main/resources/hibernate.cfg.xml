@@ -20,28 +20,28 @@
         <!-- Drop and re-create the database schema on startup -->
         <property name="hbm2ddl.auto">create-drop</property>
         <!-- Names the annotated entity class -->
-        <mapping class="Model.ProductModel.Categorization.Content" />
-        <mapping class="Model.ProductModel.Categorization.Category" />
-        <mapping class="Model.ProductModel.ProductInfo.Attribute" />
-        <mapping class="Model.ProductModel.ProductInfo.AttributeType" />
-        <mapping class="Model.ProductModel.ProductInfo.AttributeGroup" />
-        <mapping class="Model.ProductModel.ProductInfo.Brand" />
-        <mapping class="Model.ProductModel.ProductInfo.Color" />
-        <mapping class="Model.ProductModel.ProductInfo.Guaranty" />
-        <mapping class="Model.ProductModel.ProductInfo.Product" />
-        <mapping class="Model.ProductModel.Discount.DiscountRule" />
-        <mapping class="Model.ProductModel.Feedback.Answer" />
-        <mapping class="Model.ProductModel.Feedback.Comment" />
-        <mapping class="Model.ProductModel.Feedback.Feedback" />
-        <mapping class="Model.ProductModel.Feedback.FeedbackManagement" />
-        <mapping class="Model.ProductModel.Feedback.Question" />
-        <mapping class="Model.ProductModel.Feedback.Score" />
-        <mapping class="Model.UserModel.UserInfo.Address" />
-        <mapping class="Model.UserModel.UserInfo.Profile" />
-        <mapping class="Model.UserModel.Order.OrderPackage" />
-        <mapping class="Model.UserModel.Order.OrderedProduct" />
-        <mapping class="Model.UserModel.UserInfo.User" />
-        <mapping class="Model.UserModel.Order.ProductInBasket" />
+        <mapping class="Model.Entities.Categorization.Content" />
+        <mapping class="Model.Entities.Categorization.Category" />
+        <mapping class="Model.Entities.ProductInfo.Attribute" />
+        <mapping class="Model.Entities.ProductInfo.AttributeType" />
+        <mapping class="Model.Entities.ProductInfo.AttributeGroup" />
+        <mapping class="Model.Entities.ProductInfo.Brand" />
+        <mapping class="Model.Entities.ProductInfo.Color" />
+        <mapping class="Model.Entities.ProductInfo.Guaranty" />
+        <mapping class="Model.Entities.ProductInfo.Product" />
+        <mapping class="Model.Entities.Discount.DiscountRule" />
+        <mapping class="Model.Entities.Feedback.Answer" />
+        <mapping class="Model.Entities.Feedback.Comment" />
+        <mapping class="Model.Entities.Feedback.Feedback" />
+        <mapping class="Model.Entities.Feedback.FeedbackManagement" />
+        <mapping class="Model.Entities.Feedback.Question" />
+        <mapping class="Model.Entities.Feedback.Score" />
+        <mapping class="Model.Entities.UserInfo.Address" />
+        <mapping class="Model.Entities.UserInfo.Profile" />
+        <mapping class="Model.Entities.Order.OrderPackage" />
+        <mapping class="Model.Entities.Order.OrderedProduct" />
+        <mapping class="Model.Entities.UserInfo.User" />
+        <mapping class="Model.Entities.Order.ProductInBasket" />
 
     </session-factory>
 </hibernate-configuration>

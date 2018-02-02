@@ -1,7 +1,7 @@
 package Model.Repository;
 
 import Model.DatabaseOperations.Hibernate;
-import Model.ProductModel.ProductInfo.AttributeGroup;
+import Model.Entities.ProductInfo.AttributeGroup;
 
 public class AttributeGroupRepository {
 

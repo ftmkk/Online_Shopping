@@ -1,7 +1,7 @@
 package Controller.Search.TfIdf;
 
 import Controller.Search.RelevanceCalculation;
-import Model.ProductModel.ProductInfo.Product;
+import Model.Entities.ProductInfo.Product;
 
 import java.io.IOException;
 import java.util.HashMap;

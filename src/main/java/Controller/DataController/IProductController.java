@@ -1,6 +1,6 @@
 package Controller.DataController;
 
-import Model.ProductModel.ProductInfo.Product;
+import Model.Entities.ProductInfo.Product;
 
 import java.util.List;
 

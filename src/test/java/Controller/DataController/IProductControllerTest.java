@@ -1,7 +1,7 @@
 package Controller.DataController;
 
-import Model.ProductModel.Feedback.FeedbackManagement;
-import Model.ProductModel.ProductInfo.*;
+import Model.Entities.Feedback.FeedbackManagement;
+import Model.Entities.ProductInfo.*;
 import junit.framework.TestCase;
 
 import java.util.ArrayList;

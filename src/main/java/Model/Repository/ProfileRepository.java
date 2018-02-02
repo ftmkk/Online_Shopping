@@ -1,8 +1,8 @@
 package Model.Repository;
 
 import Model.DatabaseOperations.Hibernate;
-import Model.UserModel.UserInfo.Address;
-import Model.UserModel.UserInfo.Profile;
+import Model.Entities.UserInfo.Address;
+import Model.Entities.UserInfo.Profile;
 
 public class ProfileRepository {
 

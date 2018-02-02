@@ -1,6 +1,6 @@
 package Controller.Sort;
 
-import Model.ProductModel.ProductInfo.Product;
+import Model.Entities.ProductInfo.Product;
 
 import java.util.Collections;
 import java.util.Comparator;

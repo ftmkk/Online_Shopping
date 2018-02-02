@@ -1,7 +1,7 @@
 package Model.Repository;
 
 import Model.DatabaseOperations.Hibernate;
-import Model.ProductModel.ProductInfo.Color;
+import Model.Entities.ProductInfo.Color;
 
 public class ColorRepository {
 

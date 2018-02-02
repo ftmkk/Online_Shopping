@@ -1,6 +1,6 @@
 package Controller.Filter;
 
-import Model.ProductModel.ProductInfo.Product;
+import Model.Entities.ProductInfo.Product;
 import Controller.Search.SearchProducts;
 
 import java.util.List;

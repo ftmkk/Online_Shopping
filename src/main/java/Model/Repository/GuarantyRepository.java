@@ -1,7 +1,7 @@
 package Model.Repository;
 
 import Model.DatabaseOperations.Hibernate;
-import Model.ProductModel.ProductInfo.Guaranty;
+import Model.Entities.ProductInfo.Guaranty;
 
 public class GuarantyRepository {
 

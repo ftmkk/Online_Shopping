@@ -1,11 +1,11 @@
 package Controller.DataController;
 
-import Model.ProductModel.Feedback.FeedbackManagement;
-import Model.ProductModel.ProductInfo.*;
-import Model.UserModel.Order.*;
-import Model.UserModel.UserInfo.Address;
-import Model.UserModel.UserInfo.Profile;
-import Model.UserModel.UserInfo.User;
+import Model.Entities.Feedback.FeedbackManagement;
+import Model.Entities.ProductInfo.*;
+import Model.Entities.Order.*;
+import Model.Entities.UserInfo.Address;
+import Model.Entities.UserInfo.Profile;
+import Model.Entities.UserInfo.User;
 import junit.framework.TestCase;
 
 import java.util.ArrayList;

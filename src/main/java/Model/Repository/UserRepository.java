@@ -1,10 +1,10 @@
 package Model.Repository;
 
 import Model.DatabaseOperations.Hibernate;
-import Model.ProductModel.ProductInfo.Product;
-import Model.UserModel.Order.OrderPackage;
-import Model.UserModel.Order.ProductInBasket;
-import Model.UserModel.UserInfo.User;
+import Model.Entities.ProductInfo.Product;
+import Model.Entities.Order.OrderPackage;
+import Model.Entities.Order.ProductInBasket;
+import Model.Entities.UserInfo.User;
 
 import java.util.ArrayList;
 

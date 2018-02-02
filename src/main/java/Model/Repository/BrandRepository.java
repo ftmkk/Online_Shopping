@@ -1,7 +1,7 @@
 package Model.Repository;
 
 import Model.DatabaseOperations.Hibernate;
-import Model.ProductModel.ProductInfo.Brand;
+import Model.Entities.ProductInfo.Brand;
 
 public class BrandRepository {
 

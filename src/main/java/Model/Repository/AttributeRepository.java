@@ -1,7 +1,7 @@
 package Model.Repository;
 
 import Model.DatabaseOperations.Hibernate;
-import Model.ProductModel.ProductInfo.Attribute;
+import Model.Entities.ProductInfo.Attribute;
 
 public class AttributeRepository {
 

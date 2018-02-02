@@ -1,8 +1,8 @@
 package Controller.Filter;
 
-import Model.ProductModel.ProductInfo.Attribute;
-import Model.ProductModel.ProductInfo.AttributeType;
-import Model.ProductModel.ProductInfo.Product;
+import Model.Entities.ProductInfo.Attribute;
+import Model.Entities.ProductInfo.AttributeType;
+import Model.Entities.ProductInfo.Product;
 
 import java.util.ArrayList;
 import java.util.HashMap;

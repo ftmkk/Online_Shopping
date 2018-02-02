@@ -1,6 +1,6 @@
 package Controller.Search;
 
-import Model.ProductModel.ProductInfo.Product;
+import Model.Entities.ProductInfo.Product;
 
 import java.io.IOException;
 import java.util.HashMap;

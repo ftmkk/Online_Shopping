@@ -1,6 +1,6 @@
 package Model.DatabaseOperations;
 
-import Model.ProductModel.ProductInfo.*;
+import Model.Entities.ProductInfo.*;
 import org.elasticsearch.action.delete.DeleteRequest;
 import org.elasticsearch.action.search.SearchRequest;
 import org.elasticsearch.action.search.SearchResponse;

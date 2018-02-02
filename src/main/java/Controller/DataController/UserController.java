@@ -1,11 +1,11 @@
 package Controller.DataController;
 
-import Model.ProductModel.ProductInfo.Product;
+import Model.Entities.ProductInfo.Product;
 import Model.Repository.ProfileRepository;
 import Model.Repository.UserRepository;
-import Model.UserModel.UserInfo.Address;
-import Model.UserModel.UserInfo.User;
-import Model.UserModel.Order.*;
+import Model.Entities.UserInfo.Address;
+import Model.Entities.UserInfo.User;
+import Model.Entities.Order.*;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,7 +1,7 @@
 package Model.Repository;
 
 import Model.DatabaseOperations.Hibernate;
-import Model.ProductModel.Feedback.Feedback;
+import Model.Entities.Feedback.Feedback;
 
 public class FeedbackRepository {
 
