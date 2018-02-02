@@ -59,7 +59,7 @@ public class UserController implements IUserController {
         );
 
         user.clearBasket();
-        user.addAddress(destination);
+        user.getProfile().addAddress(destination);
         user.addOrderPackage(orderPackage);
 
     }

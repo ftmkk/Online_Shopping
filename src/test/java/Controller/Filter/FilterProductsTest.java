@@ -2,6 +2,7 @@ package Controller.Filter;
 
 import Controller.DataController.*;
 import Model.ProductModel.Categorization.Category;
+import Model.ProductModel.FeedBack.FeedbackManagement;
 import Model.ProductModel.ProductInfo.*;
 import junit.framework.TestCase;
 
@@ -39,7 +40,8 @@ public class FilterProductsTest extends TestCase {
                 attrL1,
                 colors1,
                 new Guaranty("12 months MICROTELL"),
-                3000L);
+                3000L,
+                new FeedbackManagement());
 
         Product p2 = new Product(
                 "p2",
@@ -56,7 +58,8 @@ public class FilterProductsTest extends TestCase {
                 attrL2,
                 colors2,
                 new Guaranty("2 months MICROTELL"),
-                3000L);
+                3000L,
+                new FeedbackManagement());
 
 
         Product p3 = new Product(
@@ -74,7 +77,8 @@ public class FilterProductsTest extends TestCase {
                 attrL3,
                 colors3,
                 new Guaranty("6 months MICROTELL"),
-                3000L);
+                3000L,
+                new FeedbackManagement());
 
 
         IProductController pr = new ProductController();

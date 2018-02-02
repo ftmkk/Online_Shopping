@@ -86,6 +86,30 @@ public class User {
     }
 
 
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public Profile getProfile() {
+        return profile;
+    }
+
+    public void setProfile(Profile profile) {
+        this.profile = profile;
+    }
+
+    public void setOrderList(List<OrderPackage> orderList) {
+        this.orderList = orderList;
+    }
+
+    public void setWishList(List<Product> wishList) {
+        this.wishList = wishList;
+    }
+
     public void setId(Integer id) {
         this.id = id;
     }

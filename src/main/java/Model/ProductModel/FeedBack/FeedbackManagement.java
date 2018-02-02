@@ -4,6 +4,7 @@ import org.hibernate.annotations.LazyCollection;
 import org.hibernate.annotations.LazyCollectionOption;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -36,8 +37,13 @@ public class FeedbackManagement {
         this.questions = questions;
     }
 
+
     public FeedbackManagement() {
+        this.comments = new ArrayList<>();
+        this.scores = new ArrayList<>();
+        this.questions = new ArrayList<>();
     }
+
 
     public List<Comment> getComments() {
         return comments;

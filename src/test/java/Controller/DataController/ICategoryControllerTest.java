@@ -2,6 +2,7 @@ package Controller.DataController;
 
 import Model.ProductModel.Categorization.Category;
 import Model.ProductModel.Categorization.Content;
+import Model.ProductModel.FeedBack.FeedbackManagement;
 import Model.ProductModel.ProductInfo.*;
 import junit.framework.TestCase;
 
@@ -47,7 +48,8 @@ public class ICategoryControllerTest extends TestCase {
                 attrL1,
                 colors1,
                 new Guaranty("12 months MICROTELL"),
-                3000L);
+                3000L,
+                new FeedbackManagement());
 
         for(Content product : categoryA.getContents()){
             assertEquals(product,p1);

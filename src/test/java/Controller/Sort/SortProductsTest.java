@@ -2,6 +2,7 @@ package Controller.Sort;
 
 import Controller.DataController.IProductController;
 import Controller.DataController.ProductController;
+import Model.ProductModel.FeedBack.FeedbackManagement;
 import Model.ProductModel.ProductInfo.*;
 import junit.framework.TestCase;
 
@@ -38,7 +39,8 @@ public class SortProductsTest extends TestCase {
                 attrL1,
                 colors1,
                 new Guaranty("12 months MICROTELL"),
-                3000L);
+                3000L,
+                new FeedbackManagement());
 
         Product p2 = new Product(
                 "p2",
@@ -55,7 +57,8 @@ public class SortProductsTest extends TestCase {
                 attrL2,
                 colors2,
                 new Guaranty("2 months MICROTELL"),
-                3000L);
+                3000L,
+                new FeedbackManagement());
 
 
         Product p3 = new Product(
@@ -73,7 +76,8 @@ public class SortProductsTest extends TestCase {
                 attrL3,
                 colors3,
                 new Guaranty("6 months MICROTELL"),
-                3000L);
+                3000L,
+                new FeedbackManagement());
 
 
         IProductController pr = new ProductController();

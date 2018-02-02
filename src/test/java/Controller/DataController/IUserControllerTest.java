@@ -1,8 +1,12 @@
 package Controller.DataController;
 
+import Model.ProductModel.FeedBack.FeedbackManagement;
 import Model.ProductModel.ProductInfo.*;
 import Model.UserModel.Order.*;
 import Model.UserModel.UserInfo.Address;
+import Model.UserModel.UserInfo.Gender;
+import Model.UserModel.UserInfo.Profile;
+import Model.UserModel.UserInfo.User;
 import junit.framework.TestCase;
 
 import java.util.ArrayList;
@@ -16,12 +20,11 @@ public class IUserControllerTest extends TestCase {
         User user = new User(
                 "Fatemeh",
                 "123123",
-                "09129999999",
-                "02177777777",
-                "ftm.karimkhani@gmail.com",
-                Gender.FEMALE,
-                "Iran, Tehran, IUST, COMP",
-                null);
+                new Profile(),
+                new ArrayList<>(),
+                new ArrayList<>(),
+                new ArrayList<>()
+        );
 
         ur.addUser(user);
         User userExpected = User.getByUsername(user.getUsername());
@@ -35,12 +38,11 @@ public class IUserControllerTest extends TestCase {
         User user = new User(
                 "Fatemeh",
                 "123123",
-                "09129999999",
-                "02177777777",
-                "ftm.karimkhani@gmail.com",
-                Gender.FEMALE,
-                "Iran, Tehran, IUST, COMP",
-                null);
+                new Profile(),
+                new ArrayList<>(),
+                new ArrayList<>(),
+                new ArrayList<>()
+        );
 
         ur.addUser(user);
 
@@ -59,7 +61,8 @@ public class IUserControllerTest extends TestCase {
                 new ArrayList<>(),
                 new ArrayList<>(),
                 new Guaranty("12 months MICROTELL"),
-                3000L);
+                3000L,
+                new FeedbackManagement());
 
         IProductController pr = new ProductController();
         pr.addProduct(p1);
@@ -77,12 +80,11 @@ public class IUserControllerTest extends TestCase {
         User user = new User(
                 "Fatemeh",
                 "123123",
-                "09129999999",
-                "02177777777",
-                "ftm.karimkhani@gmail.com",
-                Gender.FEMALE,
-                "Iran, Tehran, IUST, COMP",
-                null);
+                new Profile(),
+                new ArrayList<>(),
+                new ArrayList<>(),
+                new ArrayList<>()
+        );
 
         ur.addUser(user);
 
@@ -101,7 +103,8 @@ public class IUserControllerTest extends TestCase {
                 new ArrayList<>(),
                 new ArrayList<>(),
                 new Guaranty("12 months MICROTELL"),
-                3000L);
+                3000L,
+                new FeedbackManagement());
 
         IProductController pr = new ProductController();
         pr.addProduct(p1);
@@ -138,7 +141,8 @@ public class IUserControllerTest extends TestCase {
                 attrL1,
                 colors1,
                 new Guaranty("12 months MICROTELL"),
-                3000L);
+                3000L,
+                new FeedbackManagement());
 
         Product p2 = new Product(
                 "p2",
@@ -155,7 +159,8 @@ public class IUserControllerTest extends TestCase {
                 attrL2,
                 colors2,
                 new Guaranty("2 months MICROTELL"),
-                3000L);
+                3000L,
+                new FeedbackManagement());
 
 
         IProductController pr = new ProductController();
@@ -168,12 +173,11 @@ public class IUserControllerTest extends TestCase {
         User user = new User(
                 "Fatemeh",
                 "123123",
-                "09129999999",
-                "02177777777",
-                "ftm.karimkhani@gmail.com",
-                Gender.FEMALE,
-                "Iran, Tehran, IUST, COMP",
-                null);
+                new Profile(),
+                new ArrayList<>(),
+                new ArrayList<>(),
+                new ArrayList<>()
+        );
 
         ur.addUser(user);
 
