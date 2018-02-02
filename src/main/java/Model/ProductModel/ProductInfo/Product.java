@@ -65,7 +65,6 @@ public class Product extends Content {
     @LazyCollection(LazyCollectionOption.FALSE)
     private FeedbackManagement feedbackManagement;
 
-
     @Column
     private Long discount;
 

@@ -21,7 +21,7 @@ public class Feedback {
     private Integer id;
 
     @JoinColumn
-    @OneToMany(cascade=CascadeType.ALL)
+    @ManyToOne(cascade=CascadeType.ALL)
     @LazyCollection(LazyCollectionOption.FALSE)
     private User creator;
 
@@ -31,6 +31,9 @@ public class Feedback {
     public Feedback(Date date, User creator) {
         this.date = date;
         this.creator = creator;
+    }
+
+    public Feedback() {
     }
 
     public Integer getId() {

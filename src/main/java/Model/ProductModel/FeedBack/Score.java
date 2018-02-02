@@ -13,7 +13,6 @@ import java.util.Date;
  */
 
 @Entity
-@PrimaryKeyJoinColumn
 public class Score extends Feedback {
 
     @Column
@@ -22,6 +21,9 @@ public class Score extends Feedback {
     public Score(Date date, User creator, long score) {
         super(date, creator);
         this.score = score;
+    }
+
+    public Score() {
     }
 
     public long getScore() {

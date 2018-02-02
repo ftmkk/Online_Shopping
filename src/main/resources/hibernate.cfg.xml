@@ -20,19 +20,27 @@
         <!-- Drop and re-create the database schema on startup -->
         <property name="hbm2ddl.auto">update</property>
         <!-- Names the annotated entity class -->
+        <mapping class="Model.ProductModel.Categorization.Content" />
+        <mapping class="Model.ProductModel.Categorization.Category" />
         <mapping class="Model.ProductModel.ProductInfo.Attribute" />
         <mapping class="Model.ProductModel.ProductInfo.AttributeType" />
         <mapping class="Model.ProductModel.ProductInfo.AttributeGroup" />
         <mapping class="Model.ProductModel.ProductInfo.Brand" />
-        <mapping class="Model.ProductModel.Categorization.Category" />
         <mapping class="Model.ProductModel.ProductInfo.Color" />
-        <mapping class="Model.ProductModel.Categorization.Content" />
         <mapping class="Model.ProductModel.ProductInfo.Guaranty" />
         <mapping class="Model.ProductModel.ProductInfo.Product" />
+        <mapping class="Model.ProductModel.Discount.DiscountRule" />
+        <mapping class="Model.ProductModel.FeedBack.Answer" />
+        <mapping class="Model.ProductModel.FeedBack.Comment" />
+        <mapping class="Model.ProductModel.FeedBack.Feedback" />
+        <mapping class="Model.ProductModel.FeedBack.FeedbackManagement" />
+        <mapping class="Model.ProductModel.FeedBack.Question" />
+        <mapping class="Model.ProductModel.FeedBack.Score" />
         <mapping class="Model.UserModel.UserInfo.Address" />
+        <mapping class="Model.UserModel.UserInfo.Profile" />
         <mapping class="Model.UserModel.Order.OrderPackage" />
         <mapping class="Model.UserModel.Order.OrderedProduct" />
-        <mapping class="Model.UserModel.Order.User" />
+        <mapping class="Model.UserModel.UserInfo.User" />
         <mapping class="Model.UserModel.Order.ProductInBasket" />
 
     </session-factory>

@@ -28,12 +28,15 @@ public class FeedbackManagement {
     @Column
     @OneToMany(cascade=CascadeType.ALL)
     @LazyCollection(LazyCollectionOption.FALSE)
-    private List<Score> score;
+    private List<Score> scores;
 
-    public FeedbackManagement(List<Comment> comments, List<Score> score, List<Question> questions) {
+    public FeedbackManagement(List<Comment> comments, List<Score> scores, List<Question> questions) {
         this.comments = comments;
-        this.score = score;
+        this.scores = scores;
         this.questions = questions;
+    }
+
+    public FeedbackManagement() {
     }
 
     public List<Comment> getComments() {
@@ -52,12 +55,13 @@ public class FeedbackManagement {
         this.questions = questions;
     }
 
-    public List<Score> getScore() {
-        return score;
+    public List<Score> getScores() {
+        return scores;
     }
 
-    public void setScore(List<Score> score) {
-        this.score = score;
+
+    public void setScore(List<Score> scores) {
+        this.scores = scores;
     }
 
     @Override
@@ -65,7 +69,7 @@ public class FeedbackManagement {
         return "FeedbackManagement{" +
                 "comments=" + comments +
                 ", questions=" + questions +
-                ", score=" + score +
+                ", scores=" + scores +
                 '}';
     }
 }
