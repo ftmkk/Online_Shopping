@@ -1,8 +1,9 @@
-package Model.UserModel;
+package Model.UserInfo;
 
 import Model.Hibernate;
-import Model.ProductModel.Content;
-import Model.ProductModel.Product;
+import Model.ProductSpec.Product;
+import Model.Order.OrderPackage;
+import Model.Order.ProductInBasket;
 import org.hibernate.annotations.LazyCollection;
 import org.hibernate.annotations.LazyCollectionOption;
 

@@ -1,9 +1,9 @@
 package Controller.DataController;
 
-import Model.ProductModel.Product;
-import Model.UserModel.Address;
-import Model.UserModel.ProductInBasket;
-import Model.UserModel.User;
+import Model.ProductSpec.Product;
+import Model.UserInfo.Address;
+import Model.Order.ProductInBasket;
+import Model.UserInfo.User;
 
 public interface IUserController {
 

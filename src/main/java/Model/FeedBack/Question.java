@@ -1,7 +1,7 @@
 package Model.FeedBack;
 
 import Model.Hibernate;
-import Model.UserModel.User;
+import Model.UserInfo.User;
 import org.hibernate.annotations.LazyCollection;
 import org.hibernate.annotations.LazyCollectionOption;
 
@@ -61,6 +61,26 @@ public class Question extends feedback {
     public boolean add(){
         try {
             Hibernate.add(this);
+            return true;
+        }catch (Exception e){
+            System.out.print(e.toString());
+            return false;
+        }
+    }
+
+    public boolean remove(){
+        try {
+            Hibernate.delete(this);
+            return true;
+        }catch (Exception e){
+            System.out.print(e.toString());
+            return false;
+        }
+    }
+
+    public boolean modify(){
+        try {
+            Hibernate.update(this);
             return true;
         }catch (Exception e){
             System.out.print(e.toString());
