@@ -1,6 +1,6 @@
 package Controller.DataController;
 
-import Model.Entities.Feedback.FeedbackManagement;
+import Model.Entities.Feedback.FeedbackCollection;
 import Model.Entities.ProductInfo.*;
 import Model.Entities.Order.*;
 import Model.Entities.UserInfo.Address;
@@ -61,7 +61,7 @@ public class IUserControllerTest extends TestCase {
                 new ArrayList<>(),
                 new Guaranty("12 months MICROTELL"),
                 3000L,
-                new FeedbackManagement());
+                new FeedbackCollection());
 
         IProductController pr = new ProductController();
         pr.addProduct(p1);
@@ -103,7 +103,7 @@ public class IUserControllerTest extends TestCase {
                 new ArrayList<>(),
                 new Guaranty("12 months MICROTELL"),
                 3000L,
-                new FeedbackManagement());
+                new FeedbackCollection());
 
         IProductController pr = new ProductController();
         pr.addProduct(p1);
@@ -141,7 +141,7 @@ public class IUserControllerTest extends TestCase {
                 colors1,
                 new Guaranty("12 months MICROTELL"),
                 3000L,
-                new FeedbackManagement());
+                new FeedbackCollection());
 
         Product p2 = new Product(
                 "p2",
@@ -159,7 +159,7 @@ public class IUserControllerTest extends TestCase {
                 colors2,
                 new Guaranty("2 months MICROTELL"),
                 3000L,
-                new FeedbackManagement());
+                new FeedbackCollection());
 
 
         IProductController pr = new ProductController();

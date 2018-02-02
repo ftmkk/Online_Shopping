@@ -16,6 +16,7 @@ public class UserController implements IUserController {
         return UserRepository.addIfNotExistUsername(user);
     }
 
+
     @Override
     public User getUserByUsername(String username) {
         return UserRepository.getByUsername(username);
@@ -30,8 +31,18 @@ public class UserController implements IUserController {
     }
 
     @Override
+    public boolean removeFromBasketOfUser(User user, ProductInBasket productInBasket) {
+        return UserRepository.removeProductFromBasketIfNotExist(user, productInBasket);
+    }
+
+    @Override
     public boolean addToWishListOfUser(User user, Product product) {
         return UserRepository.addProductToWishListIfNotExist(user, product);
+    }
+
+    @Override
+    public boolean removeFromWishListOfUser(User user, Product product) {
+        return UserRepository.removeProductFromWishListIfNotExist(user, product);
     }
 
     @Override

@@ -149,6 +149,30 @@ public class Hibernate {
         }
     }
 
+    public static boolean removeIfExist(Object obj,String key,String value){
+        Session session = Hibernate.getSessionFactory().openSession();
+        Transaction tx = null;
+        try {
+            tx = session.beginTransaction();
+            Object oldObj = getByKey(obj.getClass(),key,value);
+            if(oldObj!=null){
+                session.delete(obj);
+                return true;
+            } else {
+                return false;
+            }
+        }
+        catch (Exception e) {
+            if (tx!=null) tx.rollback();
+            throw e;
+        }
+        finally {
+            session.close();
+        }
+    }
+
+
+
     @SuppressWarnings("Duplicates")
     public static List<Object> getAll(Class className){
         Session session = Hibernate.getSessionFactory().openSession();

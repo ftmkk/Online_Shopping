@@ -1,6 +1,6 @@
 package Controller.DataController;
 
-import Model.Entities.Feedback.FeedbackManagement;
+import Model.Entities.Feedback.FeedbackCollection;
 import Model.Entities.ProductInfo.*;
 import junit.framework.TestCase;
 
@@ -34,7 +34,7 @@ public class IProductControllerTest extends TestCase {
                 colors1,
                 new Guaranty("12 months MICROTELL"),
                 3000L,
-                new FeedbackManagement());
+                new FeedbackCollection());
 
         IProductController pr = new ProductController();
         pr.addProduct(p1);
@@ -69,7 +69,7 @@ public class IProductControllerTest extends TestCase {
                 colors1,
                 new Guaranty("12 months MICROTELL"),
                 3000L,
-                new FeedbackManagement());
+                new FeedbackCollection());
 
         IProductController pr = new ProductController();
         pr.addProduct(p1);
@@ -108,7 +108,7 @@ public class IProductControllerTest extends TestCase {
                 colors1,
                 new Guaranty("12 months MICROTELL"),
                 3000L,
-                new FeedbackManagement());
+                new FeedbackCollection());
 
         Product p2 = new Product(
                 "p2",
@@ -126,7 +126,7 @@ public class IProductControllerTest extends TestCase {
                 colors2,
                 new Guaranty("2 months MICROTELL"),
                 3000L,
-                new FeedbackManagement());
+                new FeedbackCollection());
 
 
         Product p3 = new Product(
@@ -145,7 +145,7 @@ public class IProductControllerTest extends TestCase {
                 colors3,
                 new Guaranty("6 months MICROTELL"),
                 3000L,
-                new FeedbackManagement());
+                new FeedbackCollection());
 
 
         IProductController pr = new ProductController();

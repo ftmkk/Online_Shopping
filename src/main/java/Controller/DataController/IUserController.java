@@ -7,10 +7,17 @@ import Model.Entities.UserInfo.User;
 
 public interface IUserController {
 
+
     boolean addUser(User user);
     User getUserByUsername(String username);
     boolean addToBasketOfUser(User user, ProductInBasket productInBasket);
+
+    boolean removeFromBasketOfUser(User user, ProductInBasket productInBasket);
+
     boolean addToWishListOfUser(User user, Product product);
+
+    boolean removeFromWishListOfUser(User user, Product product);
+
     void orderFromUser(User user, Address address);
 
 }

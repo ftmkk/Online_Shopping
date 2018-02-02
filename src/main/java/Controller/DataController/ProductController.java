@@ -10,6 +10,7 @@ import java.util.List;
 
 public class ProductController implements IProductController {
 
+    @Override
     public boolean addProduct(Product product){
 
         //SET BRAND
@@ -39,14 +40,22 @@ public class ProductController implements IProductController {
         //return added;
     }
 
+    @Override
+    public boolean removeProduct(Product product){
+        return ProductRepository.removeIfExistName(product);
+    }
+
+    @Override
     public Product getProductById(Integer id){
         return ProductRepository.getById(id);
     }
 
+    @Override
     public Product getProductByName(String name) {
         return ProductRepository.getByName(name);
     }
 
+    @Override
     public List<Product> getProducts() {
         return ProductRepository.getAll();
     }

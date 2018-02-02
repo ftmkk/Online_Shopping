@@ -1,14 +1,11 @@
 package Model.Entities.ProductInfo;
 
-import Model.DatabaseOperations.Hibernate;
 import Model.Entities.Categorization.Content;
-import Model.DatabaseOperations.Elasticsearch;
-import Model.Entities.Feedback.FeedbackManagement;
+import Model.Entities.Feedback.FeedbackCollection;
 import org.hibernate.annotations.LazyCollection;
 import org.hibernate.annotations.LazyCollectionOption;
 
 import javax.persistence.*;
-import java.net.UnknownHostException;
 import java.util.*;
 
 @Entity
@@ -63,13 +60,13 @@ public class Product extends Content {
     @JoinColumn
     @ManyToOne(cascade=CascadeType.ALL)
     @LazyCollection(LazyCollectionOption.FALSE)
-    private FeedbackManagement feedbackManagement;
+    private FeedbackCollection feedbackCollection;
 
     @Column
     private Long discount;
 
 
-    public Product(String name, String persianName, Long price, ProductStatus status, Integer remainingCount, String briefDescription, Integer visitCount, Integer sellCount, Date releaseDate, String review, Brand brand, List<Attribute> attributes, List<Color> colors, Guaranty guaranty, Long discount,FeedbackManagement FeedbackManagement) {
+    public Product(String name, String persianName, Long price, ProductStatus status, Integer remainingCount, String briefDescription, Integer visitCount, Integer sellCount, Date releaseDate, String review, Brand brand, List<Attribute> attributes, List<Color> colors, Guaranty guaranty, Long discount,FeedbackCollection FeedbackCollection) {
         super(name, persianName);
         this.price = price;
         this.status = status;
@@ -84,7 +81,7 @@ public class Product extends Content {
         this.colors = colors;
         this.guaranty = guaranty;
         this.discount = discount;
-        this.feedbackManagement = FeedbackManagement;
+        this.feedbackCollection = FeedbackCollection;
     }
 
     public Product() {
@@ -222,11 +219,11 @@ public class Product extends Content {
                 '}';
     }
 
-    public FeedbackManagement getFeedbackManagement() {
-        return feedbackManagement;
+    public FeedbackCollection getFeedbackCollection() {
+        return feedbackCollection;
     }
 
-    public void setFeedbackManagement(FeedbackManagement feedbackManagement) {
-        this.feedbackManagement = feedbackManagement;
+    public void setFeedbackCollection(FeedbackCollection feedbackCollection) {
+        this.feedbackCollection = feedbackCollection;
     }
 }

@@ -33,7 +33,7 @@
         <mapping class="Model.Entities.Feedback.Answer" />
         <mapping class="Model.Entities.Feedback.Comment" />
         <mapping class="Model.Entities.Feedback.Feedback" />
-        <mapping class="Model.Entities.Feedback.FeedbackManagement" />
+        <mapping class="Model.Entities.Feedback.FeedbackCollection" />
         <mapping class="Model.Entities.Feedback.Question" />
         <mapping class="Model.Entities.Feedback.Score" />
         <mapping class="Model.Entities.UserInfo.Address" />

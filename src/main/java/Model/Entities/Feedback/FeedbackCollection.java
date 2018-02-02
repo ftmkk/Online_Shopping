@@ -9,7 +9,7 @@ import java.util.List;
 
 
 @Entity
-public class FeedbackManagement {
+public class FeedbackCollection {
 
     @Id
     @Column
@@ -31,14 +31,14 @@ public class FeedbackManagement {
     @LazyCollection(LazyCollectionOption.FALSE)
     private List<Score> scores;
 
-    public FeedbackManagement(List<Comment> comments, List<Score> scores, List<Question> questions) {
+    public FeedbackCollection(List<Comment> comments, List<Score> scores, List<Question> questions) {
         this.comments = comments;
         this.scores = scores;
         this.questions = questions;
     }
 
 
-    public FeedbackManagement() {
+    public FeedbackCollection() {
         this.comments = new ArrayList<>();
         this.scores = new ArrayList<>();
         this.questions = new ArrayList<>();
@@ -72,7 +72,7 @@ public class FeedbackManagement {
 
     @Override
     public String toString() {
-        return "FeedbackManagement{" +
+        return "FeedbackCollection{" +
                 "comments=" + comments +
                 ", questions=" + questions +
                 ", scores=" + scores +

@@ -4,6 +4,7 @@ import Model.DatabaseOperations.Elasticsearch;
 import Model.DatabaseOperations.Hibernate;
 import Model.Entities.ProductInfo.Product;
 
+import java.io.IOException;
 import java.net.UnknownHostException;
 import java.util.List;
 
@@ -32,6 +33,20 @@ public class ProductRepository {
 
     public void addToElastic(Product product) throws UnknownHostException {
         Elasticsearch.add(product);
+    }
+
+    public static boolean removeIfExistName(Product product) {
+        String key = "name";
+        String value = product.getName();
+        return Hibernate.removeIfExist(product,key,value);
+    }
+
+    public void deleteFromElastic(Product product) throws UnknownHostException {
+        Elasticsearch.deleteDocument(String.valueOf(product.getId()));
+    }
+
+    public void searchProductElastic(String searchTerm) throws IOException {
+        Elasticsearch.MultiMatchSearch(searchTerm);
     }
 
 }

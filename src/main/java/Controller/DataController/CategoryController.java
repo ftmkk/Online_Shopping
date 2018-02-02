@@ -14,6 +14,11 @@ public class CategoryController implements ICategoryController {
     }
 
     @Override
+    public boolean removeCategory(Category category) {
+        return CategoryRepository.removeIfExistName(category);
+    }
+
+    @Override
     public Category getCategoryByName(String name) {
         return CategoryRepository.getByName(name);
     }
@@ -24,8 +29,19 @@ public class CategoryController implements ICategoryController {
     }
 
     @Override
+    public boolean removeProductFromCategory(Product product, Category category) {
+        return CategoryRepository.removeContentIfExist(category, product);
+    }
+
+    @Override
     public void addCategoryToCategory(Category subCategory, Category superCategory) {
         CategoryRepository.addContentIfNotExist(superCategory, subCategory);
+
+    }
+
+    @Override
+    public void removeCategoryFromCategory(Category subCategory, Category superCategory) {
+        CategoryRepository.removeContentIfExist(superCategory, subCategory);
 
     }
 

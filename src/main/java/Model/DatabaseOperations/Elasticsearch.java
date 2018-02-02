@@ -1,6 +1,6 @@
 package Model.DatabaseOperations;
 
-import Model.Entities.Feedback.FeedbackManagement;
+import Model.Entities.Feedback.FeedbackCollection;
 import Model.Entities.ProductInfo.*;
 import org.elasticsearch.action.delete.DeleteRequest;
 import org.elasticsearch.action.search.SearchRequest;
@@ -59,7 +59,7 @@ public class Elasticsearch {
                 colors1,
                 new Guaranty("12 months avajang"),
                 3000L,
-                new FeedbackManagement());
+                new FeedbackCollection());
 
         Client client = getClient();
         //client.prepareDelete("onlineshopping","product","AWDHvwg_W2MtLdBt5RiP").execute().actionGet();
@@ -184,7 +184,7 @@ public class Elasticsearch {
         return result;
     }
 
-    public static List<Product> MustQueryName(String searhTerm) throws IOException {
+    public static List<Product> MultiMatchSearch(String searhTerm) throws IOException {
 
         List<Product> result = new ArrayList<>();
         Client client = getClient();
