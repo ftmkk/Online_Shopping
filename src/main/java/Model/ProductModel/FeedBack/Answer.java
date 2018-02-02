@@ -22,6 +22,9 @@ public class Answer extends Feedback {
         this.answer_content = answer_content;
     }
 
+    public Answer() {
+    }
+
     public String getAnswer_content() {
         return answer_content;
     }
