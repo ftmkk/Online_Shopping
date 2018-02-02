@@ -1,7 +1,6 @@
 package Controller.DataController;
 
 import Model.ProductModel.ProductInfo.Product;
-import Model.ProductSpec.Product;
 import Model.UserModel.UserInfo.Address;
 import Model.UserModel.Order.ProductInBasket;
 import Model.UserModel.UserInfo.User;

@@ -1,5 +1,7 @@
 package Model.ProductModel.ProductInfo;
 
+import Model.DatabaseOperations.Hibernate;
+
 import javax.persistence.*;
 
 @Entity

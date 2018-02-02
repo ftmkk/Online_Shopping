@@ -6,9 +6,6 @@ import org.hibernate.annotations.LazyCollectionOption;
 import javax.persistence.*;
 import java.util.List;
 
-/**
- * Created by nejati on 29/01/2018.
- */
 
 @Entity
 public class FeedbackManagement {
@@ -21,26 +18,20 @@ public class FeedbackManagement {
     @Column
     @OneToMany(cascade= CascadeType.ALL)
     @LazyCollection(LazyCollectionOption.FALSE)
-    public List<Comment> comments;
+    private List<Comment> comments;
 
     @Column
     @OneToMany(cascade=CascadeType.ALL)
     @LazyCollection(LazyCollectionOption.FALSE)
-    public List<Question> questions;
+    private List<Question> questions;
 
     @Column
     @OneToMany(cascade=CascadeType.ALL)
     @LazyCollection(LazyCollectionOption.FALSE)
-    public List<Answer> answers;
+    private List<Score> score;
 
-    @Column
-    @OneToMany(cascade=CascadeType.ALL)
-    @LazyCollection(LazyCollectionOption.FALSE)
-    public Score score;
-
-    public FeedbackManagement(List<Comment> comments, List<Answer> answers, Score score, List<Question> questions) {
+    public FeedbackManagement(List<Comment> comments, List<Score> score, List<Question> questions) {
         this.comments = comments;
-        this.answers = answers;
         this.score = score;
         this.questions = questions;
     }
@@ -61,19 +52,11 @@ public class FeedbackManagement {
         this.questions = questions;
     }
 
-    public List<Answer> getAnswers() {
-        return answers;
-    }
-
-    public void setAnswers(List<Answer> answers) {
-        this.answers = answers;
-    }
-
-    public Score getScore() {
+    public List<Score> getScore() {
         return score;
     }
 
-    public void setScore(Score score) {
+    public void setScore(List<Score> score) {
         this.score = score;
     }
 
@@ -82,7 +65,6 @@ public class FeedbackManagement {
         return "FeedbackManagement{" +
                 "comments=" + comments +
                 ", questions=" + questions +
-                ", answers=" + answers +
                 ", score=" + score +
                 '}';
     }

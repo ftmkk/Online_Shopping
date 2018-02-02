@@ -1,5 +1,6 @@
 package Model.ProductModel.ProductInfo;
 
+import Model.DatabaseOperations.Hibernate;
 import Model.ProductModel.Categorization.Content;
 import Model.DatabaseOperations.Elasticsearch;
 import Model.ProductModel.FeedBack.FeedbackManagement;
@@ -7,6 +8,7 @@ import org.hibernate.annotations.LazyCollection;
 import org.hibernate.annotations.LazyCollectionOption;
 
 import javax.persistence.*;
+import java.net.UnknownHostException;
 import java.util.*;
 
 @Entity
@@ -66,9 +68,6 @@ public class Product extends Content {
 
     @Column
     private Long discount;
-
-    public Product(String p1, String s, long l, ProductStatus available, int i, String s1, int i1, int i2, Object o, String s2, Brand brand, List<Attribute> attrL1, List<Color> colors1, Guaranty guaranty, long l1) {
-    }
 
 
     public Product(String name, String persianName, Long price, ProductStatus status, Integer remainingCount, String briefDescription, Integer visitCount, Integer sellCount, Date releaseDate, String review, Brand brand, List<Attribute> attributes, List<Color> colors, Guaranty guaranty, Long discount,FeedbackManagement FeedbackManagement) {
@@ -227,7 +226,7 @@ public class Product extends Content {
     }
 
 
-    public void addToElastic(){
+    public void addToElastic() throws UnknownHostException {
         Elasticsearch.add(this);
     }
 

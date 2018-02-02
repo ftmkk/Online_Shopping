@@ -13,7 +13,7 @@ import java.util.Date;
 
 @Entity
 @Inheritance
-public class feedback {
+public class Feedback {
 
     @Id
     @Column
@@ -23,12 +23,12 @@ public class feedback {
     @JoinColumn
     @OneToMany(cascade=CascadeType.ALL)
     @LazyCollection(LazyCollectionOption.FALSE)
-    public User creator;
+    private User creator;
 
     @Column
     private Date date;
 
-    public feedback(Date date, User creator) {
+    public Feedback(Date date, User creator) {
         this.date = date;
         this.creator = creator;
     }
@@ -61,7 +61,7 @@ public class feedback {
 
     @Override
     public String toString() {
-        return "feedback{" +
+        return "Feedback{" +
                 "id=" + id +
                 ", creator=" + creator +
                 ", date=" + date +

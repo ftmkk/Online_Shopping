@@ -1,5 +1,6 @@
 package Model.ProductModel.FeedBack;
 
+import Model.DatabaseOperations.Hibernate;
 import Model.UserModel.UserInfo.User;
 
 import javax.persistence.Column;
@@ -11,7 +12,7 @@ import java.util.Date;
  */
 
 @Entity
-public class Comment extends feedback {
+public class Comment extends Feedback {
 
     @Column
     private String comment_title;

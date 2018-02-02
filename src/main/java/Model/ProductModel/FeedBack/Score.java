@@ -1,5 +1,6 @@
 package Model.ProductModel.FeedBack;
 
+import Model.DatabaseOperations.Hibernate;
 import Model.UserModel.UserInfo.User;
 
 import javax.persistence.Column;
@@ -13,7 +14,7 @@ import java.util.Date;
 
 @Entity
 @PrimaryKeyJoinColumn
-public class Score extends feedback {
+public class Score extends Feedback {
 
     @Column
     private long score;

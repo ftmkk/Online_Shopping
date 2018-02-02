@@ -1,5 +1,6 @@
 package Model.ProductModel.FeedBack;
 
+import Model.DatabaseOperations.Hibernate;
 import Model.UserModel.UserInfo.User;
 import org.hibernate.annotations.LazyCollection;
 import org.hibernate.annotations.LazyCollectionOption;
@@ -13,7 +14,7 @@ import java.util.List;
  */
 
 @Entity
-public class Question extends feedback {
+public class Question extends Feedback {
 
     @Column
     @OneToMany(cascade=CascadeType.ALL)
