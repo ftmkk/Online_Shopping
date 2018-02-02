@@ -1,7 +1,7 @@
 package Model.FeedBack;
 
 import Model.Hibernate;
-import Model.UserModel.User;
+import Model.UserInfo.User;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -39,6 +39,16 @@ public class Score extends feedback {
     public boolean add(){
         try {
             Hibernate.add(this);
+            return true;
+        }catch (Exception e){
+            System.out.print(e.toString());
+            return false;
+        }
+    }
+
+    public boolean remove(){
+        try {
+            Hibernate.delete(this);
             return true;
         }catch (Exception e){
             System.out.print(e.toString());

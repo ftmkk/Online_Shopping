@@ -1,7 +1,9 @@
 package Controller.DataController;
 
-import Model.ProductModel.Product;
-import Model.UserModel.*;
+import Model.ProductSpec.Product;
+import Model.UserInfo.Address;
+import Model.UserInfo.User;
+import Model.Order.*;
 
 import java.util.ArrayList;
 import java.util.List;

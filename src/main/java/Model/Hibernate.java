@@ -1,6 +1,5 @@
 package Model;
 
-import Model.ProductModel.Product;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -120,6 +119,24 @@ public class Hibernate {
         try {
             tx = session.beginTransaction();
             session.save(obj);
+            session.flush();
+            tx.commit();
+        }
+        catch (Exception e) {
+            if (tx!=null) tx.rollback();
+            throw e;
+        }
+        finally {
+            session.close();
+        }
+    }
+
+    public static void delete(Object obj){
+        Session session = Hibernate.getSessionFactory().openSession();
+        Transaction tx = null;
+        try {
+            tx = session.beginTransaction();
+            session.delete(obj);
             session.flush();
             tx.commit();
         }

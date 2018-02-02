@@ -1,6 +1,6 @@
 package Model.FeedBack;
 
-import Model.UserModel.User;
+import Model.UserInfo.User;
 import org.hibernate.annotations.LazyCollection;
 import org.hibernate.annotations.LazyCollectionOption;
 

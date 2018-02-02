@@ -1,4 +1,4 @@
-package Model.UserModel;
+package Model.UserInfo;
 
 import javax.persistence.*;
 
