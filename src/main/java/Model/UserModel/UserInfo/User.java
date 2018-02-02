@@ -27,24 +27,10 @@ public class User {
     @Column
     private String password;
 
-    @Column
-    private String phoneNumber;
-
-    @Column
-    private String mobileNumber;
-
-    @Column
-    private String email;
-
-    @Column
-    @Enumerated
-    private Gender gender;
-
-    @Column
-    private String residenceAddress;
-
-    @Column
-    private Date birthDate;
+    @JoinColumn
+    @ManyToOne(cascade=CascadeType.ALL)
+    @LazyCollection(LazyCollectionOption.FALSE)
+    private Profile profile;
 
     @Column
     @OneToMany(cascade=CascadeType.ALL)
@@ -61,40 +47,14 @@ public class User {
     @LazyCollection(LazyCollectionOption.FALSE)
     private List<ProductInBasket> basketList;
 
-    @Column
-    @OneToMany(cascade=CascadeType.ALL)
-    @LazyCollection(LazyCollectionOption.FALSE)
-    private List<Address> addresses;
 
-    public User(String username, String password, String phoneNumber, String mobileNumber, String email, Gender gender, String residenceAddress, Date birthDate, List<OrderPackage> orderList, List<Product> wishList, List<ProductInBasket> basketList, List<Address> addresses) {
+    public User(String username, String password, Profile profile, List<OrderPackage> orderList, List<Product> wishList, List<ProductInBasket> basketList) {
         this.username = username;
         this.password = password;
-        this.phoneNumber = phoneNumber;
-        this.mobileNumber = mobileNumber;
-        this.email = email;
-        this.gender = gender;
-        this.residenceAddress = residenceAddress;
-        this.birthDate = birthDate;
+        this.profile = profile;
         this.orderList = orderList;
         this.wishList = wishList;
         this.basketList = basketList;
-        this.addresses = addresses;
-    }
-
-
-    public User(String username, String password, String phoneNumber, String mobileNumber, String email, Gender gender, String residenceAddress, Date birthDate) {
-        this.username = username;
-        this.password = password;
-        this.phoneNumber = phoneNumber;
-        this.mobileNumber = mobileNumber;
-        this.email = email;
-        this.gender = gender;
-        this.residenceAddress = residenceAddress;
-        this.birthDate = birthDate;
-        this.addresses = new ArrayList<>();
-        this.wishList = new ArrayList<>();
-        this.orderList = new ArrayList<>();
-        this.basketList = new ArrayList<>();
     }
 
     public User() {
@@ -112,29 +72,6 @@ public class User {
         return password;
     }
 
-    public String getPhoneNumber() {
-        return phoneNumber;
-    }
-
-    public String getMobileNumber() {
-        return mobileNumber;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public Gender getGender() {
-        return gender;
-    }
-
-    public String getResidenceAddress() {
-        return residenceAddress;
-    }
-
-    public Date getBirthDate() {
-        return birthDate;
-    }
 
     public List<OrderPackage> getOrderList() {
         return orderList;
@@ -148,9 +85,6 @@ public class User {
         return basketList;
     }
 
-    public List<Address> getAddresses() {
-        return addresses;
-    }
 
     public void setId(Integer id) {
         this.id = id;
@@ -223,10 +157,6 @@ public class User {
         Hibernate.update(this);
     }
 
-    public void addAddress(Address address){
-        this.getAddresses().add(address);
-        Hibernate.update(this);
-    }
 
     @Override
     public String toString() {
@@ -234,16 +164,10 @@ public class User {
                 "id=" + id +
                 ", username='" + username + '\'' +
                 ", password='" + password + '\'' +
-                ", phoneNumber='" + phoneNumber + '\'' +
-                ", mobileNumber='" + mobileNumber + '\'' +
-                ", email='" + email + '\'' +
-                ", gender=" + gender +
-                ", residenceAddress='" + residenceAddress + '\'' +
-                ", birthDate=" + birthDate +
+                ", profile=" + profile +
                 ", orderList=" + orderList +
                 ", wishList=" + wishList +
                 ", basketList=" + basketList +
-                ", addresses=" + addresses +
                 '}';
     }
 }
