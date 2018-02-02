@@ -203,10 +203,6 @@ public class Product extends Content {
     }
 
 
-    public void addToElastic() throws UnknownHostException {
-        Elasticsearch.add(this);
-    }
-
     @Override
     public String toString() {
         return "Product{" +

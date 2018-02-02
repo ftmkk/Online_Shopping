@@ -1,8 +1,10 @@
 package Model.Repository;
 
+import Model.DatabaseOperations.Elasticsearch;
 import Model.DatabaseOperations.Hibernate;
 import Model.ProductModel.ProductInfo.Product;
 
+import java.net.UnknownHostException;
 import java.util.List;
 
 public class ProductRepository {
@@ -26,6 +28,10 @@ public class ProductRepository {
 
     public static List<Product> getAll(){
         return (List<Product>)(Object) Hibernate.getAll(Product.class);
+    }
+
+    public void addToElastic(Product product) throws UnknownHostException {
+        Elasticsearch.add(product);
     }
 
 }
