@@ -1,9 +1,7 @@
 package Model.DatabaseOperations;
 
-import org.hibernate.Criteria;
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.Transaction;
+import Model.Entities.UserInfo.View;
+import org.hibernate.*;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.criterion.Restrictions;
 
@@ -101,6 +99,26 @@ public class Hibernate {
             tx = session.beginTransaction();
             Object result = session.get(className,id);
             tx.commit();
+            return result;
+        }
+        catch (Exception e) {
+            if (tx!=null) tx.rollback();
+            throw e;
+        }
+        finally {
+            session.close();
+        }
+    }
+
+    public static List<View> getByProperty(Class className, String prop){
+        Session session = Hibernate.getSessionFactory().openSession();
+        Transaction tx = null;
+        try {
+            tx = session.beginTransaction();
+            String statement = "select * from view where user="+prop;
+            Query query = session.createSQLQuery(statement);
+            query.setMaxResults(50);
+            List<View> result =  query.list();
             return result;
         }
         catch (Exception e) {
