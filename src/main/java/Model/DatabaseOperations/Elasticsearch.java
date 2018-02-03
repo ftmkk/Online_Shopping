@@ -185,7 +185,6 @@ public class Elasticsearch {
     }
 
     public static List<Product> MultiMatchSearch(String searhTerm) throws IOException {
-
         List<Product> result = new ArrayList<>();
         Client client = getClient();
 

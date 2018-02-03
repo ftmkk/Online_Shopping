@@ -45,8 +45,8 @@ public class ProductRepository {
         Elasticsearch.deleteDocument(String.valueOf(product.getId()));
     }
 
-    public void searchProductElastic(String searchTerm) throws IOException {
-        Elasticsearch.MultiMatchSearch(searchTerm);
+    public List<Product> searchProductElastic(String searchTerm) throws IOException {
+        return Elasticsearch.MultiMatchSearch(searchTerm);
     }
 
 }

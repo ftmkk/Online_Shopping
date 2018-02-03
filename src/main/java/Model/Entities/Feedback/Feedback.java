@@ -24,7 +24,6 @@ public class Feedback {
     @ManyToOne(cascade=CascadeType.ALL)
     @LazyCollection(LazyCollectionOption.FALSE)
     private User creator;
-
     @Column
     private Date date;
 

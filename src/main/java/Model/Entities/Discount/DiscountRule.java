@@ -120,17 +120,6 @@ public class DiscountRule {
         this.products = products;
     }
 
-    public void updateDiscount(int newValue){
-
-        this.value = newValue;
-    }
-
-
-    public void invalidDiscount(){
-        this.active = false;
-    }
-
-
     public boolean hasProductInProductList(Product product){
         for(Product productInList : this.getProducts()){
             if(productInList.getName().equals(product.getName())){

@@ -57,10 +57,6 @@ public class Brand {
     }
 
 
-    public void flush(){
-
-    }
-
     @Override
     public String toString() {
         return "Brand{" +
